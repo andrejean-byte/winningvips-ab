@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Winning VIPs</title>
+  <meta name="description" content="Get in touch with the Winning VIPs team. We welcome questions, feedback, partnership inquiries, and casino review requests.">
+
+  <!-- CRITICAL: TRACKING (GTM) – DO NOT MODIFY -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-52ZZJVGW');</script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/themes.css">
+</head>
+<body>
+  <script src="js/theme.js"></script>
+
+  <!-- GTM (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52ZZJVGW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- LANGUAGE BAR -->
+  <div class="lang-bar">
+    <label for="lang-picker" data-i18n="lang.label">Language:</label>
+    <select id="lang-picker" class="lang-select">
+      <option value="en" selected>English</option>
+      <option value="es">Espanol</option>
+      <option value="pt">Portugues</option>
+      <option value="de">Deutsch</option>
+      <option value="fr">Francais</option>
+      <option value="it">Italiano</option>
+      <option value="ja">Japanese</option>
+      <option value="fi">Suomi</option>
+      <option value="no">Norsk</option>
+      <option value="pl">Polski</option>
+      <option value="tr">Turkce</option>
+    </select>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo-link">
+        <img src="../assets/winning-vips-logo-iHxWsc-G.png" alt="Winning VIPs" class="logo-img">
+        <span class="logo-text">Winning VIPs</span>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Toggle menu">&#9776;</button>
+      <nav class="main-nav">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="reviews/index.html" data-i18n="nav.reviews">Reviews</a>
+        <a href="guides/beginners-guide-online-casinos.html" data-i18n="nav.guides">Guides</a>
+        <a href="about.html" data-i18n="nav.about">About</a>
+        <a href="responsible-gambling.html" data-i18n="nav.responsible">Responsible Gaming</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="index.html" data-i18n="breadcrumb.home">Home</a><span class="sep">/</span><span data-i18n="contact_breadcrumb">Contact Us</span>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <h1 data-i18n="contact_title" data-i18n-html="true">Contact <span class="accent">Us</span></h1>
+    <p class="hero-sub" data-i18n="contact_subtitle">Have a question, suggestion, or business inquiry? We would love to hear from you.</p>
+  </section>
+
+  <!-- CONTENT -->
+  <div class="legal-content">
+
+    <p data-i18n="contact_intro" data-i18n-html="true">Whether you have a question about one of our reviews, want to suggest a casino for us to evaluate, or are interested in a business partnership, we welcome your message. Please use the form below to get in touch with the Winning VIPs team.</p>
+    <p data-i18n="contact_response" data-i18n-html="true">We typically respond within 48 hours during business days. For urgent responsible gambling concerns, please contact the helplines listed on our <a href="responsible-gambling.html" style="color:#7c3aed;">Responsible Gaming</a> page.</p>
+
+    <h2 data-i18n="contact_form_title">Send Us a Message</h2>
+
+    <form class="contact-form" onsubmit="event.preventDefault(); this.querySelector('.btn-cta').textContent='Message Sent!'; this.querySelector('.btn-cta').style.background='#7c3aed'; this.querySelector('.btn-cta').style.color='#fff';">
+
+      <div class="form-group">
+        <label for="contact-name" data-i18n="contact_form_name">Full Name</label>
+        <input type="text" id="contact-name" name="name" placeholder="Your full name" data-i18n-placeholder="contact_form_name_ph" required>
+      </div>
+
+      <div class="form-group">
+        <label for="contact-email" data-i18n="contact_form_email">Email Address</label>
+        <input type="email" id="contact-email" name="email" placeholder="your@email.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="contact-subject" data-i18n="contact_form_subject">Subject</label>
+        <select id="contact-subject" name="subject" required>
+          <option value="" disabled selected data-i18n="contact_form_select">Select a subject</option>
+          <option value="general" data-i18n="contact_form_opt_general">General Inquiry</option>
+          <option value="review-request" data-i18n="contact_form_opt_review">Casino Review Request</option>
+          <option value="partnership" data-i18n="contact_form_opt_partner">Partnership</option>
+          <option value="report-issue" data-i18n="contact_form_opt_issue">Report an Issue</option>
+          <option value="feedback" data-i18n="contact_form_opt_feedback">Feedback</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="contact-message" data-i18n="contact_form_message">Message</label>
+        <textarea id="contact-message" name="message" placeholder="Tell us how we can help..." data-i18n-placeholder="contact_form_message_ph" required></textarea>
+      </div>
+
+      <button type="submit" class="btn-cta btn-cta--full" data-i18n="contact_form_submit">Send Message</button>
+
+    </form>
+
+    <p style="text-align:center; font-size:0.82rem; color:#666; margin-top:16px;" data-i18n="contact_form_note">We typically respond within 48 hours. Please check your spam folder if you do not receive a reply.</p>
+
+    <h2 data-i18n="contact_biz_title">Business Inquiries</h2>
+    <p data-i18n="contact_biz_p1">If you represent an online casino, game provider, payment processor, or other iGaming company and would like to discuss a partnership, advertising opportunity, or review request, we would be happy to hear from you. Please select "Partnership" in the subject dropdown above, or reach out to us directly.</p>
+    <p data-i18n="contact_biz_p2">We evaluate all partnership inquiries carefully. Please note that commercial relationships do not guarantee favorable reviews. Our editorial team operates independently, and all reviews are based on our standardized evaluation methodology.</p>
+
+    <h2 data-i18n="contact_press_title">Press &amp; Media</h2>
+    <p data-i18n="contact_press_p1">Members of the press seeking information, quotes, or data from Winning VIPs are welcome to contact us using the form above. Please select "General Inquiry" and include details about your publication and request in the message field.</p>
+
+    <h2 data-i18n="contact_mail_title">Written Correspondence</h2>
+    <p data-i18n="contact_mail_p1">For written correspondence: Winning VIPs Media, contact details available upon request. Please use the contact form to request our mailing information.</p>
+
+    <h2 data-i18n="contact_resp_title">Responsible Gambling Concerns</h2>
+    <p data-i18n="contact_resp_p1" data-i18n-html="true">If you or someone you know is experiencing problem gambling, please visit our <a href="responsible-gambling.html" style="color:#7c3aed;">Responsible Gaming page</a> for a comprehensive list of helplines and support resources available internationally. These services are free and confidential.</p>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <img src="../assets/winning-vips-logo-iHxWsc-G.png" alt="Winning VIPs" class="footer-logo">
+          <p class="footer-desc" data-i18n="footer.desc">Independent online casino reviews, bonus guides, and player resources. Helping players worldwide make informed decisions since 2024.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.casinoReviews">Casino Reviews</h4>
+          <a href="reviews/neospin.html">NeoSpin</a>
+          <a href="reviews/golden-crown.html">Golden Crown</a>
+          <a href="reviews/luckyvibe.html">LuckyVibe</a>
+          <a href="reviews/skycrown.html">SkyCrown</a>
+          <a href="reviews/wild-tokyo.html">Wild Tokyo</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.guidesCol">Guides</h4>
+          <a href="guides/beginners-guide-online-casinos.html" data-i18n="footer.guide.beginners">Beginner's Guide</a>
+          <a href="guides/understanding-casino-bonuses.html" data-i18n="footer.guide.bonuses">Bonus Guide</a>
+          <a href="guides/how-to-choose-online-casino.html" data-i18n="footer.guide.choose">Choosing a Casino</a>
+          <a href="guides/responsible-gambling-tips.html" data-i18n="footer.guide.responsible">Responsible Play</a>
+          <a href="guides/online-casino-payment-methods.html" data-i18n="footer.guide.payments">Payment Methods</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.company">Company</h4>
+          <a href="about.html" data-i18n="footer.aboutUs">About Us</a>
+          <a href="responsible-gambling.html" data-i18n="footer.responsibleGaming">Responsible Gaming</a>
+          <a href="terms.html" data-i18n="footer.terms">Terms of Service</a>
+          <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="contact.html" data-i18n="footer.contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-disclaimer" data-i18n="footer.disclaimer">
+          Gambling involves risk. Please play responsibly. Only gamble with money you can afford to lose.
+          If you or someone you know has a gambling problem, seek help at a licensed support service.
+          All casino offers are subject to terms and conditions. Players must be 18+ (or legal age in their jurisdiction).
+          This site contains affiliate links. We may receive compensation when you sign up through our links.
+          This does not influence our reviews — all ratings are based on independent testing.
+        </p>
+        <p class="footer-copy" data-i18n="footer.copyright">&copy; 2026 Winning VIPs. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- i18n Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/translations-legal.js"></script>
+  <script src="js/i18n.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winning VIPs — Find Your Perfect Casino Match</title>
+  <meta name="description" content="5 verified casinos, 5 different strengths. Match your priority to the right casino and register in under 2 minutes.">
+
+  <!-- CRITICAL: TRACKING (GTM) – DO NOT MODIFY -->
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-52ZZJVGW');</script>
+  <!-- End Google Tag Manager -->
+
+  <!--
+    ============================================================
+    VARIANT 5: DECISION CONFIDENCE
+    ============================================================
+    Persuasion strategy: Choice architecture & decision framing
+
+    CONVERSION GOAL: Increase high-intent clicks, reduce low-intent.
+
+    How this variant achieves the goal:
+    1. CHOICE ARCHITECTURE — Instead of presenting 5 equal options
+       (paradox of choice / decision paralysis), this variant organizes
+       casinos by USE CASE. Each casino is "the best for" a specific
+       player priority. Users self-select their priority first, then
+       scroll to the matching card with confidence.
+    2. QUICK MATCH GUIDE — Before the full grid, a 5-line guide maps
+       player priorities directly to casino names. This reduces the
+       decision from "evaluate 5 options" to "find my category."
+       Category-based decisions are faster and feel more certain.
+    3. PROCESS TRANSPARENCY — A "What Happens When You Click" section
+       explicitly shows the 3-step flow: Choose → Register → Bonus.
+       "Register" appears BEFORE the CTA grid so users know what
+       clicking means. Only committed users continue.
+    4. PER-CARD DESTINATION MICRO-COPY — Each CTA button shows
+       "→ Opens [Casino] registration" below it. This is the final
+       intent filter at the point of decision — no ambiguity about
+       what the click does.
+    5. DEFAULT RECOMMENDATION — "Not sure? NeoSpin scores highest
+       overall" gives indecisive users a clear path. The default effect
+       increases action rate by eliminating the "I'll decide later" exit.
+
+    Psychology:
+    - Choice architecture (Thaler & Sunstein): how options are
+      presented determines what people choose
+    - Paradox of choice (Schwartz): too many equal options → no action
+    - Category-based decision making: people choose categories first,
+      then pick within the category — faster, higher confidence
+    - Default effect: a recommended default increases conversion
+    - Process transparency: showing steps reduces uncertainty
+
+    Key structural difference from other variants:
+    - v1 (Authority) answers "Should I trust this?"
+    - v2 (Social Proof) answers "Are others doing this?"
+    - v3 (Scarcity) answers "Should I act now?"
+    - v4 (Pre-Qualification) answers "Am I the right person?"
+    - v5 (Decision Confidence) answers "WHICH ONE is right for me?"
+
+    Low-intent click reduction:
+    - Process section says "register" before any CTA appears
+    - "THIS IS MY PICK" requires a committed decision, not idle curiosity
+    - Per-card micro-copy names the destination at the button
+    - No hero featured card — user must make an active choice
+    ============================================================
+  -->
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+      background: #0a0a0f; color: #e2e2e8; line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10, 10, 15, 0.85);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(124, 58, 237, 0.2); padding: 14px 0;
+    }
+    .header .container { display: flex; align-items: center; gap: 12px; }
+    .header-logo { width: 40px; height: 40px; border-radius: 8px; }
+    .header-title { font-size: 1.25rem; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
+
+    .hero {
+      position: relative; padding: 100px 20px 60px;
+      text-align: center; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: 10%; left: 50%;
+      transform: translateX(-50%); width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+    .hero-headline {
+      font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; color: #fff;
+      line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 16px;
+    }
+    .hero-headline .accent { color: #7c3aed; }
+    .hero-subtext { font-size: 1.125rem; color: #9999aa; max-width: 540px; margin: 0 auto; }
+
+    /* Quick Match Guide */
+    .quick-guide { padding: 80px 20px; }
+    .section-heading {
+      text-align: center; font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700; color: #fff; margin-bottom: 16px;
+    }
+    .section-sub {
+      text-align: center; font-size: 1rem; color: #9999aa;
+      max-width: 520px; margin: 0 auto 48px;
+    }
+    .guide-grid {
+      display: flex; flex-direction: column; gap: 12px;
+      max-width: 600px; margin: 0 auto 48px;
+    }
+    .guide-row {
+      display: flex; align-items: center; gap: 16px;
+      background: #1a1a2e; border-radius: 12px; padding: 16px 20px;
+      border-left: 3px solid #7c3aed;
+    }
+    .guide-priority {
+      font-size: 0.9rem; color: #e2e2e8; font-weight: 600; flex: 1;
+    }
+    .guide-arrow { color: #7c3aed; font-weight: 700; flex-shrink: 0; }
+    .guide-pick {
+      font-size: 0.9rem; color: #00d4aa; font-weight: 700;
+      min-width: 110px; text-align: right;
+    }
+    .guide-default {
+      text-align: center; font-size: 0.95rem; color: #70708a;
+      max-width: 500px; margin: 0 auto;
+    }
+    .guide-default strong { color: #a78bfa; }
+
+    /* Process steps */
+    .process { padding: 0 20px 80px; }
+    .process-heading {
+      text-align: center; font-size: 1.15rem; font-weight: 700;
+      color: #fff; margin-bottom: 32px;
+    }
+    .process-steps {
+      display: flex; justify-content: center; gap: 48px;
+      flex-wrap: wrap; max-width: 700px; margin: 0 auto;
+    }
+    .process-step { text-align: center; min-width: 140px; }
+    .process-number {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(124, 58, 237, 0.15); color: #a78bfa;
+      font-weight: 700; font-size: 0.95rem; margin-bottom: 10px;
+    }
+    .process-text { font-size: 0.875rem; color: #9999aa; }
+
+    /* Casino grid */
+    .cta-section { padding: 80px 20px; }
+    .casino-grid {
+      display: grid; grid-template-columns: 1fr; gap: 24px;
+      max-width: 1120px; margin: 0 auto;
+    }
+    @media (min-width: 768px) { .casino-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .casino-grid { grid-template-columns: repeat(3, 1fr); } }
+    .casino-card {
+      background: #1a1a2e; border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px; padding: 28px;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .casino-card:hover { border-color: rgba(124, 58, 237, 0.4); transform: translateY(-2px); }
+    .casino-badge {
+      display: inline-block; background: rgba(124, 58, 237, 0.12); color: #a78bfa;
+      font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.06em; padding: 3px 10px; border-radius: 999px; margin-bottom: 16px;
+    }
+    .casino-logo { width: 100px; height: auto; margin-bottom: 8px; }
+    .casino-bestfor {
+      font-size: 0.8rem; font-weight: 600; color: #00d4aa;
+      margin-bottom: 10px; letter-spacing: 0.02em;
+    }
+    .casino-name { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .casino-rating { color: #facc15; font-size: 0.875rem; margin-bottom: 14px; }
+    .casino-bonus { font-size: 1.15rem; font-weight: 700; color: #00d4aa; margin-bottom: 4px; }
+    .casino-bonus-sub { font-size: 0.85rem; color: #9999aa; margin-bottom: 16px; }
+    .casino-features {
+      list-style: none; font-size: 0.825rem; color: #b0b0be;
+      margin-bottom: 16px; display: flex; flex-direction: column; gap: 6px;
+    }
+    .casino-region { font-size: 0.75rem; color: #70708a; margin-bottom: 20px; }
+
+    .btn-cta {
+      display: inline-block; background: #00d4aa; color: #0a0a0f;
+      font-size: 1rem; font-weight: 700; padding: 14px 40px;
+      border-radius: 8px; transition: background 0.2s, transform 0.2s;
+      cursor: pointer; border: none;
+    }
+    .btn-cta:hover { background: #00eabb; transform: translateY(-1px); }
+    .casino-card .btn-cta {
+      width: 100%; text-align: center; font-size: 0.95rem;
+      padding: 12px 24px; margin-top: auto;
+    }
+
+    /* CTA destination micro-copy — intent filter at the point of click */
+    .cta-dest {
+      display: block; font-size: 0.7rem; color: #70708a;
+      margin-top: 8px; text-align: center;
+    }
+
+    /* Trust row */
+    .trust-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; margin-top: 48px; }
+    .trust-item { text-align: center; }
+    .trust-icon { font-size: 1.5rem; margin-bottom: 6px; }
+    .trust-label { font-size: 0.875rem; font-weight: 600; color: #a78bfa; }
+
+    .footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 48px 20px 32px; text-align: center;
+    }
+    .footer-logo { width: 36px; margin: 0 auto 12px; border-radius: 6px; }
+    .footer-brand { font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 20px; }
+    .footer-links {
+      display: flex; justify-content: center; gap: 24px;
+      flex-wrap: wrap; margin-bottom: 24px;
+    }
+    .footer-links a { font-size: 0.85rem; color: #9999aa; transition: color 0.2s; }
+    .footer-links a:hover { color: #a78bfa; }
+    .footer-disclaimer {
+      max-width: 640px; margin: 0 auto 16px;
+      font-size: 0.75rem; color: #555566; line-height: 1.7;
+    }
+    .footer-copy { font-size: 0.75rem; color: #444455; }
+  </style>
+</head>
+<body>
+
+  <!-- CRITICAL: TRACKING (GTM) – DO NOT MODIFY -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52ZZJVGW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- SECTION: HEADER — Sticky navigation with brand identity -->
+  <header class="header">
+    <div class="container">
+      <img src="../../assets/winning-vips-logo-iHxWsc-G.png" alt="Winning VIPs" class="header-logo">
+      <span class="header-title">Winning VIPs</span>
+    </div>
+  </header>
+
+  <!--
+    SECTION: HERO / HEADLINE — Decision framing (no featured casino)
+    CONVERSION GOAL: Increase high-intent clicks, reduce low-intent.
+    - No featured casino in hero — avoids biasing the choice and forces
+      the user to make an active decision (higher commitment).
+    - "5 Casinos. 5 Strengths." frames this as a decision, not a pitch.
+    - "Which One Fits You?" shifts the question from "should I?" to
+      "which one?" — this presupposes the user IS going to sign up.
+    - Subtext qualifies: "ready to pick" filters pure browsers.
+  -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-headline">5 Casinos. 5 Strengths.<br><span class="accent">Which One Fits You?</span></h1>
+      <p class="hero-subtext">Each casino does one thing better than the rest. If you're ready to pick, we'll help you find the right match in under 60 seconds.</p>
+    </div>
+  </section>
+
+  <!--
+    SECTION: QUICK MATCH GUIDE — Category-based decision shortcut
+    CONVERSION GOAL: Reduce decision paralysis, increase confidence.
+    - Maps 5 player priorities to specific casinos in 5 lines.
+    - Category-based decisions are faster and higher-confidence than
+      evaluating 5 equal options — users identify their priority FIRST,
+      then look for the matching card in the grid below.
+    - Default recommendation ("Not sure? NeoSpin") catches indecisive
+      users who might otherwise leave without choosing.
+  -->
+  <section class="quick-guide">
+    <div class="container">
+      <h2 class="section-heading">Match Your Priority</h2>
+      <p class="section-sub">What matters most to you? Find your match, then scroll to your pick.</p>
+
+      <div class="guide-grid">
+        <!-- OPT V5-1: Generic categories replaced with specific, measurable differentiators that help users self-select with confidence. -->
+        <div class="guide-row">
+          <span class="guide-priority">Widest game selection (7,000+ titles)</span>
+          <span class="guide-arrow">&rarr;</span>
+          <span class="guide-pick">NeoSpin</span>
+        </div>
+        <div class="guide-row">
+          <span class="guide-priority">Progressive jackpot networks</span>
+          <span class="guide-arrow">&rarr;</span>
+          <span class="guide-pick">Golden Crown</span>
+        </div>
+        <div class="guide-row">
+          <span class="guide-priority">Same-day crypto withdrawals</span>
+          <span class="guide-arrow">&rarr;</span>
+          <span class="guide-pick">LuckyVibe</span>
+        </div>
+        <div class="guide-row">
+          <span class="guide-priority">Highest total welcome bonus ($8K)</span>
+          <span class="guide-arrow">&rarr;</span>
+          <span class="guide-pick">SkyCrown</span>
+        </div>
+        <div class="guide-row">
+          <span class="guide-priority">VIP tiers + daily tournaments</span>
+          <span class="guide-arrow">&rarr;</span>
+          <span class="guide-pick">Wild Tokyo</span>
+        </div>
+      </div>
+
+      <!-- OPT V5-3: More actionable default recommendation. Names NeoSpin as #1 and adds social proof ("most first-time users start here"). -->
+      <p class="guide-default">Can't decide? Go with <strong>NeoSpin</strong> — it ranks #1 overall and is where most first-time users start.</p>
+    </div>
+  </section>
+
+  <!--
+    SECTION: PROCESS — What happens when you click (intent filter)
+    CONVERSION GOAL: Eliminate uncertainty, filter low-intent.
+    - Shows the 3-step flow BEFORE the CTA grid: Choose → Register → Bonus.
+    - "Register on their site" appears explicitly — users who are not
+      ready to create an account will stop here. Users who continue
+      past this point have accepted that clicking = registering.
+    - This is the clearest possible intent filter.
+  -->
+  <section class="process">
+    <div class="container">
+      <h3 class="process-heading">What Happens When You Click</h3>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-number">1</div>
+          <div class="process-text">Pick your casino below</div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">2</div>
+          <!-- OPT V5-4: Removed "2 min" overpromise — registration time varies and overpromising erodes trust. -->
+          <div class="process-text">Register on their site</div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">3</div>
+          <div class="process-text">VIP bonus applied automatically</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+    SECTION: CTA — Casino grid with "Best for" labels and destination micro-copy
+    CONVERSION GOAL: Increase high-intent clicks, reduce low-intent.
+    - "Best for: [priority]" label on each card connects back to the
+      Quick Match Guide — users see their category and feel confident.
+    - CTA "THIS IS MY PICK" requires a committed decision. It's
+      possessive ("my") and decisive ("this is") — only confident
+      users will click this.
+    - Per-card micro-copy "→ Opens [Casino] registration" names the
+      exact destination at the final moment of decision.
+    - User who clicks has: (1) identified their priority, (2) matched
+      to a casino, (3) understood the 3-step process, (4) committed
+      to a pick. This is a high-intent click.
+  -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="section-heading">Pick Your Casino</h2>
+      <p class="section-sub">Full details on each pick. Every button opens that casino's registration page.</p>
+
+      <div class="casino-grid">
+
+        <!-- OPT V5-2: Casino badges now complement (not duplicate) the "Best for:" labels. Each badge provides a different signal than the best-for category. -->
+        <div class="casino-card">
+          <span class="casino-badge">Our #1 Pick</span>
+          <img src="../../assets/neospin-h-CYhO2e-6.png" alt="NeoSpin" class="casino-logo">
+          <div class="casino-bestfor">Best for: Widest game selection (7,000+ titles)</div>
+          <div class="casino-name">NeoSpin</div>
+          <div class="casino-rating">&#9733;&#9733;&#9733;&#9733;&#9733; 5/5</div>
+          <div class="casino-bonus">$11,000 + 300 Free Spins</div>
+          <!-- OPT V5-5: "Welcome Bonus Package" → "Verified Welcome Package" adds trust signal at the point of decision. -->
+          <div class="casino-bonus-sub">Verified Welcome Package</div>
+          <ul class="casino-features">
+            <li>7,000+ games from top providers</li>
+            <li>Crypto &amp; fiat payments</li>
+            <li>24/7 live support</li>
+          </ul>
+          <div class="casino-region">Available: AU, NZ, CA, EU</div>
+          <a href="#" class="btn-cta">THIS IS MY PICK</a>
+          <span class="cta-dest">&rarr; Opens NeoSpin registration</span>
+        </div>
+
+        <div class="casino-card">
+          <span class="casino-badge">Jackpot Specialist</span>
+          <img src="../../assets/golden-crown-h-BKdPXvqs.png" alt="Golden Crown" class="casino-logo">
+          <div class="casino-bestfor">Best for: Progressive jackpot networks</div>
+          <div class="casino-name">Golden Crown</div>
+          <div class="casino-rating">&#9733;&#9733;&#9733;&#9733;&#9734; 4.8/5</div>
+          <div class="casino-bonus">$1,000 + 300 Free Spins</div>
+          <!-- OPT V5-5: "Welcome Bonus Package" → "Verified Welcome Package" adds trust signal at the point of decision. -->
+          <div class="casino-bonus-sub">Verified Welcome Package</div>
+          <ul class="casino-features">
+            <li>Progressive jackpot network</li>
+            <li>VIP loyalty rewards</li>
+            <li>Fast withdrawals</li>
+          </ul>
+          <div class="casino-region">Available: AU, NZ, CA, EU</div>
+          <a href="#" class="btn-cta">THIS IS MY PICK</a>
+          <span class="cta-dest">&rarr; Opens Golden Crown registration</span>
+        </div>
+
+        <div class="casino-card">
+          <span class="casino-badge">Payout Leader</span>
+          <img src="../../assets/luckyvibe-h-BXFWYfG-.png" alt="LuckyVibe" class="casino-logo">
+          <div class="casino-bestfor">Best for: Same-day crypto withdrawals</div>
+          <div class="casino-name">LuckyVibe</div>
+          <div class="casino-rating">&#9733;&#9733;&#9733;&#9733;&#9734; 4/5</div>
+          <div class="casino-bonus">$5,000 + 300 Free Spins</div>
+          <!-- OPT V5-5: "Welcome Bonus Package" → "Verified Welcome Package" adds trust signal at the point of decision. -->
+          <div class="casino-bonus-sub">Verified Welcome Package</div>
+          <ul class="casino-features">
+            <li>Instant crypto withdrawals</li>
+            <li>5,000+ slot games</li>
+            <li>Weekly cashback offers</li>
+          </ul>
+          <div class="casino-region">Available: AU, NZ, CA, EU</div>
+          <a href="#" class="btn-cta">THIS IS MY PICK</a>
+          <span class="cta-dest">&rarr; Opens LuckyVibe registration</span>
+        </div>
+
+        <div class="casino-card">
+          <span class="casino-badge">Biggest Package</span>
+          <img src="../../assets/skycrown-h-BxEMja5-.png" alt="SkyCrown" class="casino-logo">
+          <div class="casino-bestfor">Best for: Highest total welcome bonus ($8K)</div>
+          <div class="casino-name">SkyCrown</div>
+          <div class="casino-rating">&#9733;&#9733;&#9733;&#9733;&#9734; 4.7/5</div>
+          <div class="casino-bonus">$8,000 + 400 Free Spins</div>
+          <!-- OPT V5-5: "Welcome Bonus Package" → "Verified Welcome Package" adds trust signal at the point of decision. -->
+          <div class="casino-bonus-sub">Verified Welcome Package</div>
+          <ul class="casino-features">
+            <li>Massive welcome package</li>
+            <li>Live dealer tables</li>
+            <li>Multi-currency support</li>
+          </ul>
+          <div class="casino-region">Available: AU, NZ, CA, EU</div>
+          <a href="#" class="btn-cta">THIS IS MY PICK</a>
+          <span class="cta-dest">&rarr; Opens SkyCrown registration</span>
+        </div>
+
+        <div class="casino-card">
+          <span class="casino-badge">Tournament Hub</span>
+          <img src="../../assets/wild-tokyo-h-BI0HV9m-.png" alt="Wild Tokyo" class="casino-logo">
+          <div class="casino-bestfor">Best for: VIP tiers + daily tournaments</div>
+          <div class="casino-name">Wild Tokyo</div>
+          <div class="casino-rating">&#9733;&#9733;&#9733;&#9733;&#9734; 4.6/5</div>
+          <div class="casino-bonus">$5,300 + 600 Free Spins</div>
+          <!-- OPT V5-5: "Welcome Bonus Package" → "Verified Welcome Package" adds trust signal at the point of decision. -->
+          <div class="casino-bonus-sub">Verified Welcome Package</div>
+          <ul class="casino-features">
+            <li>Anime-themed experience</li>
+            <li>Exclusive VIP program</li>
+            <li>Daily tournaments</li>
+          </ul>
+          <div class="casino-region">Available: AU, NZ, CA, EU</div>
+          <a href="#" class="btn-cta">THIS IS MY PICK</a>
+          <span class="cta-dest">&rarr; Opens Wild Tokyo registration</span>
+        </div>
+
+      </div>
+
+      <div class="trust-row">
+        <div class="trust-item">
+          <div class="trust-icon">&#128274;</div>
+          <div class="trust-label">Licensed &amp; Regulated</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">&#9989;</div>
+          <div class="trust-label">Verified Payouts</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">&#127873;</div>
+          <div class="trust-label">Exclusive Bonuses</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: FOOTER / DISCLAIMER — Legal, responsible gaming, affiliate disclosure, copyright -->
+  <footer class="footer">
+    <img src="../../assets/winning-vips-logo-iHxWsc-G.png" alt="Winning VIPs" class="footer-logo">
+    <div class="footer-brand">Winning VIPs</div>
+    <nav class="footer-links">
+      <a href="#">Responsible Gaming</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Contact</a>
+    </nav>
+    <p class="footer-disclaimer">
+      Gambling involves risk. Please play responsibly. Only gamble with money you can afford to lose.
+      If you or someone you know has a gambling problem, seek help at a licensed support service.
+      All casino offers are subject to terms and conditions. Players must be 18+ (or legal age in their jurisdiction).
+      This site contains affiliate links. We may receive compensation when you sign up through our links.
+    </p>
+    <p class="footer-copy">&copy; 2026 Winning VIPs. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

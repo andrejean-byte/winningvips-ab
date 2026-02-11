@@ -1,0 +1,504 @@
+<!-- STRUCTURAL VARIANT: v6 – HORIZONTAL CARDS / COMPARISON LAYOUT. Wide horizontal casino rows, sidebar-style info, comparison feel. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winning VIPs — Exclusive Casino Bonuses & Verified Payouts</title>
+  <meta name="description" content="Exclusive casino bonuses, verified payouts, and licensed platforms. Claim your VIP bonus today.">
+
+  <!-- CRITICAL: TRACKING (GTM) – DO NOT MODIFY -->
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-52ZZJVGW');</script>
+  <!-- End Google Tag Manager -->
+  <script>localStorage.setItem('wv-variant','v6');</script>
+
+  <style>
+    /* === v6 HORIZONTAL / COMPARISON: Wide cards, logo left, info center, CTA right, review-site feel === */
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f4f6f9;
+      color: #1f2937;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+    /* === HEADER === */
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      background: #fff; border-bottom: 1px solid #e5e7eb;
+      padding: 14px 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .header .container { display: flex; align-items: center; gap: 12px; }
+    .header-logo { width: 36px; height: 36px; border-radius: 8px; }
+
+    .header-title {
+      font-size: 1.15rem; font-weight: 700; color: #1f2937; letter-spacing: -0.01em;
+    }
+
+    /* === HERO (compact, left-aligned) === */
+    .hero {
+      padding: 64px 20px 40px;
+      background: linear-gradient(180deg, #fff 0%, #f4f6f9 100%);
+    }
+
+    .hero::before { display: none; }
+
+    .hero-content { max-width: 1000px; margin: 0 auto; }
+
+    .hero-headline {
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 800; color: #111827;
+      line-height: 1.15; letter-spacing: -0.03em;
+      margin-bottom: 12px; text-align: left;
+    }
+
+    .hero-headline .accent { color: #4f46e5; }
+
+    .hero-subtext {
+      font-size: 1.05rem; color: #6b7280;
+      max-width: 540px; margin-bottom: 0; text-align: left;
+    }
+
+    /* Trust bar inline with hero */
+    .trust-bar {
+      display: flex; flex-wrap: wrap; gap: 24px;
+      margin-top: 24px; padding-top: 20px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .trust-bar-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.85rem; font-weight: 600; color: #4f46e5;
+    }
+
+    .trust-bar-icon { font-size: 1.1rem; }
+
+    /* === CASINO LIST (Horizontal cards) === */
+    .cta-section { padding: 48px 20px 80px; }
+
+    .cta-heading {
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-weight: 700; color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .cta-subheading {
+      font-size: 0.95rem; color: #9ca3af; margin-bottom: 32px;
+    }
+
+    .casino-grid {
+      display: flex; flex-direction: column; gap: 16px;
+      max-width: 1000px; margin: 0 auto;
+    }
+
+    .casino-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px; padding: 24px 28px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center; gap: 24px;
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+
+    @media (max-width: 767px) {
+      .casino-card {
+        grid-template-columns: 1fr;
+        text-align: center; gap: 16px;
+      }
+      .casino-card-left { justify-items: center; }
+      .casino-card .btn-cta { width: 100%; }
+    }
+
+    .casino-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+
+    /* Numbered rank badge */
+    .casino-card-left {
+      display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 100px;
+    }
+
+    .casino-badge {
+      display: inline-block;
+      background: #eef2ff; color: #4f46e5;
+      font-size: 0.65rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      padding: 3px 10px; border-radius: 999px; margin-bottom: 4px;
+    }
+
+    .casino-logo { width: 80px; }
+
+    /* Center info */
+    .casino-card-center { display: flex; flex-direction: column; gap: 4px; }
+    .casino-name { font-size: 1.2rem; font-weight: 700; color: #111827; }
+    .casino-rating { color: #f59e0b; font-size: 0.85rem; }
+    .casino-bonus { font-size: 1.2rem; font-weight: 700; color: #059669; margin-top: 4px; }
+    .casino-bonus-sub { font-size: 0.8rem; color: #9ca3af; }
+
+    .casino-features {
+      list-style: none; display: flex; flex-wrap: wrap; gap: 8px;
+      font-size: 0.78rem; color: #6b7280; margin-top: 6px;
+    }
+
+    .casino-features li {
+      background: #f9fafb; padding: 2px 8px; border-radius: 4px; border: 1px solid #f3f4f6;
+    }
+
+    .casino-region { font-size: 0.7rem; color: #d1d5db; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+    /* Right CTA */
+    .casino-card-right { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+
+    .btn-cta {
+      display: inline-block;
+      background: #4f46e5; color: #fff;
+      font-size: 0.9rem; font-weight: 700;
+      padding: 14px 36px; border-radius: 8px;
+      transition: background 0.2s, transform 0.15s;
+      cursor: pointer; border: none; white-space: nowrap;
+    }
+
+    .btn-cta:hover { background: #4338ca; transform: translateY(-1px); }
+
+    /* Featured first card highlight */
+    .casino-card.featured-row {
+      border: 2px solid #4f46e5;
+      background: linear-gradient(135deg, #eef2ff 0%, #fff 100%);
+    }
+
+    /* === QUALIFICATION (below casinos) === */
+    .qualification { padding: 72px 20px; background: #fff; border-top: 1px solid #e5e7eb; }
+
+    .qualification-heading {
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-weight: 700; color: #111827; margin-bottom: 40px; text-align: center;
+    }
+
+    .qual-grid {
+      display: grid; grid-template-columns: 1fr; gap: 24px;
+      max-width: 800px; margin: 0 auto;
+    }
+
+    @media (min-width: 768px) { .qual-grid { grid-template-columns: 1fr 1fr; } }
+
+    .qual-card {
+      background: #f9fafb; border: 1px solid #e5e7eb;
+      border-radius: 12px; padding: 28px; border-top: 3px solid;
+    }
+
+    .qual-card--yes { border-color: #059669; }
+    .qual-card--no { border-color: #dc2626; }
+
+    .qual-card-title { font-size: 1.1rem; font-weight: 700; color: #111827; margin-bottom: 16px; }
+    .qual-card--yes .qual-card-title { color: #059669; }
+    .qual-card--no .qual-card-title { color: #dc2626; }
+
+    .qual-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+
+    .qual-list li {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 0.9rem; color: #4b5563;
+    }
+
+    .qual-list li::before { content: '✓'; font-weight: 700; flex-shrink: 0; }
+    .qual-card--yes .qual-list li::before { color: #059669; }
+    .qual-card--no .qual-list li::before { content: '✗'; color: #dc2626; }
+
+    /* Hidden elements from original structure (trust row handled inline) */
+    .trust-row { display: none; }
+    .trust-item { display: none; }
+    .trust-icon { display: none; }
+    .trust-label { display: none; }
+    .featured-card { display: none; }
+    .featured-badge { display: none; }
+
+    /* === FOOTER === */
+    .footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 48px 20px 32px; text-align: center; background: #fff;
+    }
+
+    .footer-logo { width: 32px; margin: 0 auto 10px; border-radius: 6px; }
+    .footer-brand { font-size: 0.95rem; font-weight: 600; color: #111827; margin-bottom: 16px; }
+
+    .footer-links {
+      display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;
+    }
+
+    .footer-links a { font-size: 0.8rem; color: #9ca3af; transition: color 0.2s; }
+    .footer-links a:hover { color: #4f46e5; }
+
+    .footer-disclaimer {
+      max-width: 600px; margin: 0 auto 14px;
+      font-size: 0.7rem; color: #d1d5db; line-height: 1.7;
+    }
+
+    .footer-copy { font-size: 0.7rem; color: #e5e7eb; }
+
+    /* === RESPONSIVE === */
+    @media (min-width: 1200px) {
+      html { font-size: 17px; }
+      .hero-headline { font-size: clamp(2.4rem, 5vw, 3.4rem); }
+      .btn-cta { font-size: 0.95rem; padding: 16px 44px; }
+      .casino-name { font-size: 1.3rem; }
+      .casino-bonus { font-size: 1.25rem; }
+    }
+
+    @media (min-width: 1440px) {
+      html { font-size: 18px; }
+      .container { max-width: 1140px; }
+      .casino-card { padding: 28px 36px; gap: 32px; }
+      .casino-logo { width: 96px; }
+    }
+
+    @media (min-width: 1920px) {
+      html { font-size: 20px; }
+      .container { max-width: 1200px; }
+    }
+
+    @media (min-width: 1300px) and (max-width: 1439px) {
+      html { font-size: 17px; }
+      .cta-section { padding: 40px 20px 64px; }
+      .qualification { padding: 56px 20px; }
+    }
+
+    /* === LOGO VISIBILITY FIX: Dark pad behind transparent-bg logos on light backgrounds === */
+    .casino-logo {
+      background: #1a1a2e;
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+
+    .header-logo,
+    .footer-logo {
+      background: #1a1a2e;
+      padding: 4px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CRITICAL: TRACKING (GTM) – DO NOT MODIFY -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52ZZJVGW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <a href="../../pages/index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;">
+        <img src="../../assets/winning-vips-logo-iHxWsc-G.png" alt="Winning VIPs" class="header-logo">
+        <span class="header-title">Winning VIPs</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO (compact, left-aligned with inline trust bar) -->
+  <section class="hero">
+    <div class="hero-content container">
+      <h1 class="hero-headline">Play at the Right <span class="accent">Casino</span></h1>
+      <p class="hero-subtext">Welcome bonuses with published wagering terms, payout-tested platforms, and licensed operators only.</p>
+      <div class="trust-bar">
+        <div class="trust-bar-item"><span class="trust-bar-icon">&#128274;</span> Licensed &amp; Regulated</div>
+        <div class="trust-bar-item"><span class="trust-bar-icon">&#9989;</span> Verified Payouts</div>
+        <div class="trust-bar-item"><span class="trust-bar-icon">&#127873;</span> Published Bonus Terms</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASINO LIST — Horizontal comparison cards -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-heading">5 Licensed Casinos We Recommend</h2>
+      <p class="cta-subheading">Each link opens the casino's registration page where your welcome bonus is applied.</p>
+
+      <div class="casino-grid">
+
+        <!-- NeoSpin (Featured row) -->
+        <div class="casino-card featured-row">
+          <div class="casino-card-left">
+            <span class="casino-badge">#1 Best Overall</span>
+            <img src="../../assets/neospin-h-CYhO2e-6.png" alt="NeoSpin" class="casino-logo">
+          </div>
+          <div class="casino-card-center">
+            <div class="casino-name">NeoSpin</div>
+            <div class="casino-rating">&#9733;&#9733;&#9733;&#9733;&#9733; 5/5</div>
+            <div class="casino-bonus">$11,000 + 300 Free Spins</div>
+            <div class="casino-bonus-sub">Welcome Bonus Package</div>
+            <ul class="casino-features">
+              <li>7,000+ games</li>
+              <li>Crypto &amp; fiat</li>
+              <li>24/7 support</li>
+            </ul>
+            <div class="casino-region">Available: AU, NZ, CA, EU</div>
+          </div>
+          <div class="casino-card-right">
+            <a href="https://betncrypt.com/A9t2XfP4/" target="_blank" rel="noopener" class="btn-cta">SEE FULL OFFER</a>
+          </div>
+        </div>
+
+        <!-- Golden Crown -->
+        <div class="casino-card">
+          <div class="casino-card-left">
+            <span class="casino-badge">#2 Biggest Jackpot</span>
+            <img src="../../assets/golden-crown-h-BKdPXvqs.png" alt="Golden Crown" class="casino-logo">
+          </div>
+          <div class="casino-card-center">
+            <div class="casino-name">Golden Crown</div>
+            <div class="casino-rating">&#9733;&#9733;&#9733;&#9733;&#9734; 4.8/5</div>
+            <div class="casino-bonus">$1,000 + 300 Free Spins</div>
+            <div class="casino-bonus-sub">Welcome Bonus Package</div>
+            <ul class="casino-features">
+              <li>Progressive jackpots</li>
+              <li>VIP rewards</li>
+              <li>Fast withdrawals</li>
+            </ul>
+            <div class="casino-region">Available: AU, NZ, CA, EU</div>
+          </div>
+          <div class="casino-card-right">
+            <a href="https://betncrypt.com/Z4rW8pK2/" target="_blank" rel="noopener" class="btn-cta">SEE FULL OFFER</a>
+          </div>
+        </div>
+
+        <!-- LuckyVibe -->
+        <div class="casino-card">
+          <div class="casino-card-left">
+            <span class="casino-badge">#3 Fastest Payouts</span>
+            <img src="../../assets/luckyvibe-h-BXFWYfG-.png" alt="LuckyVibe" class="casino-logo">
+          </div>
+          <div class="casino-card-center">
+            <div class="casino-name">LuckyVibe</div>
+            <div class="casino-rating">&#9733;&#9733;&#9733;&#9733;&#9734; 4/5</div>
+            <div class="casino-bonus">$5,000 + 300 Free Spins</div>
+            <div class="casino-bonus-sub">Welcome Bonus Package</div>
+            <ul class="casino-features">
+              <li>Instant crypto</li>
+              <li>5,000+ slots</li>
+              <li>Weekly cashback</li>
+            </ul>
+            <div class="casino-region">Available: AU, NZ, CA, EU</div>
+          </div>
+          <div class="casino-card-right">
+            <a href="https://betncrypt.com/q7N5bD1L/" target="_blank" rel="noopener" class="btn-cta">SEE FULL OFFER</a>
+          </div>
+        </div>
+
+        <!-- SkyCrown -->
+        <div class="casino-card">
+          <div class="casino-card-left">
+            <span class="casino-badge">#4 Best Welcome Bonus</span>
+            <img src="../../assets/skycrown-h-BxEMja5-.png" alt="SkyCrown" class="casino-logo">
+          </div>
+          <div class="casino-card-center">
+            <div class="casino-name">SkyCrown</div>
+            <div class="casino-rating">&#9733;&#9733;&#9733;&#9733;&#9734; 4.7/5</div>
+            <div class="casino-bonus">$8,000 + 400 Free Spins</div>
+            <div class="casino-bonus-sub">Welcome Bonus Package</div>
+            <ul class="casino-features">
+              <li>Massive package</li>
+              <li>Live dealers</li>
+              <li>Multi-currency</li>
+            </ul>
+            <div class="casino-region">Available: AU, NZ, CA, EU</div>
+          </div>
+          <div class="casino-card-right">
+            <a href="https://betncrypt.com/H6yG2aS7/" target="_blank" rel="noopener" class="btn-cta">SEE FULL OFFER</a>
+          </div>
+        </div>
+
+        <!-- Wild Tokyo -->
+        <div class="casino-card">
+          <div class="casino-card-left">
+            <span class="casino-badge">#5 VIP Favorite</span>
+            <img src="../../assets/wild-tokyo-h-BI0HV9m-.png" alt="Wild Tokyo" class="casino-logo">
+          </div>
+          <div class="casino-card-center">
+            <div class="casino-name">Wild Tokyo</div>
+            <div class="casino-rating">&#9733;&#9733;&#9733;&#9733;&#9734; 4.6/5</div>
+            <div class="casino-bonus">$5,300 + 600 Free Spins</div>
+            <div class="casino-bonus-sub">Welcome Bonus Package</div>
+            <ul class="casino-features">
+              <li>Anime-themed</li>
+              <li>Exclusive VIP</li>
+              <li>Daily tournaments</li>
+            </ul>
+            <div class="casino-region">Available: AU, NZ, CA, EU</div>
+          </div>
+          <div class="casino-card-right">
+            <a href="https://betncrypt.com/m9E1jR4t/" target="_blank" rel="noopener" class="btn-cta">SEE FULL OFFER</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALIFICATION -->
+  <section class="qualification">
+    <div class="container">
+      <h2 class="qualification-heading">Is This Right for You?</h2>
+
+      <div class="qual-grid">
+        <div class="qual-card qual-card--yes">
+          <h3 class="qual-card-title">This IS for you if...</h3>
+          <ul class="qual-list">
+            <li>You want access to exclusive bonuses not found elsewhere</li>
+            <li>You value fast, verified payouts you can count on</li>
+            <li>You only play at licensed, regulated casinos</li>
+            <li>You prefer high RTP games with transparent odds</li>
+          </ul>
+        </div>
+        <div class="qual-card qual-card--no">
+          <h3 class="qual-card-title">This is NOT for you if...</h3>
+          <ul class="qual-list">
+            <li>You are under 18 years of age</li>
+            <li>You prefer unlicensed, unregulated platforms</li>
+            <li>You are at risk of or struggling with gambling addiction</li>
+            <li>You reside in a restricted jurisdiction</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <a href="../../pages/index.html"><img src="../../assets/winning-vips-logo-iHxWsc-G.png" alt="Winning VIPs" class="footer-logo"></a>
+    <div class="footer-brand">Winning VIPs</div>
+    <nav class="footer-links">
+      <a href="../../pages/responsible-gambling.html">Responsible Gaming</a>
+      <a href="../../pages/terms.html">Terms of Service</a>
+      <a href="../../pages/privacy.html">Privacy Policy</a>
+      <a href="../../pages/contact.html">Contact</a>
+    </nav>
+    <p class="footer-disclaimer">
+      Gambling involves risk. Please play responsibly. Only gamble with money you can afford to lose.
+      If you or someone you know has a gambling problem, seek help at a licensed support service.
+      All casino offers are subject to terms and conditions. Players must be 18+ (or legal age in their jurisdiction).
+      This site contains affiliate links. We may receive compensation when you sign up through our links.
+    </p>
+    <p class="footer-copy">&copy; 2026 Winning VIPs. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

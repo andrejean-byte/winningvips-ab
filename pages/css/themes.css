@@ -1,0 +1,987 @@
+/* ============================================================
+   WINNING VIPS — Theme Overrides (A/B Variant Inheritance)
+   Each variant page sets a class on <body> via theme.js.
+   v0 / v1 match the default dark theme — no overrides needed.
+   ============================================================ */
+
+/* ============================================================
+   Theme: v1 — Polished (subtle refinement, slightly warmer bg)
+   ============================================================ */
+body.theme-v1 {
+  background: #0b0b12;
+}
+body.theme-v1 .site-header {
+  background: rgba(11, 11, 18, 0.92);
+  border-bottom-color: rgba(124, 58, 237, 0.25);
+}
+body.theme-v1 .site-footer {
+  background: #07070e;
+}
+body.theme-v1 .lang-bar {
+  background: #07070e;
+}
+
+/* ============================================================
+   Theme: v2 — Editorial / Premium (cream, serif)
+   ============================================================ */
+body.theme-v2 {
+  background: #faf8f5;
+  color: #2c2c35;
+  font-family: Georgia, 'Times New Roman', 'Noto Serif', serif;
+}
+body.theme-v2 .site-header {
+  background: rgba(250, 248, 245, 0.95);
+  border-bottom-color: #e8e4de;
+}
+body.theme-v2 .site-header .logo-text { color: #2c2c35; }
+body.theme-v2 .main-nav a { color: #6b6b78; }
+body.theme-v2 .main-nav a:hover,
+body.theme-v2 .main-nav a.active { color: #2c2c35; }
+
+body.theme-v2 .lang-bar {
+  background: #f0ece6;
+  border-bottom-color: #e0dcd4;
+  color: #7a7a88;
+}
+body.theme-v2 .lang-select {
+  background: #fff;
+  color: #2c2c35;
+  border-color: #d4d0c8;
+}
+
+body.theme-v2 .page-hero::before {
+  background: radial-gradient(circle, rgba(124, 92, 62, 0.10) 0%, transparent 70%);
+}
+body.theme-v2 .page-hero h1 .accent { color: #7c5c3e; }
+body.theme-v2 .page-hero .hero-sub { color: #6b6b78; }
+
+body.theme-v2 .section--alt { background: rgba(0, 0, 0, 0.02); }
+
+body.theme-v2 .casino-card {
+  background: #fff;
+  border-color: #e8e4de;
+}
+body.theme-v2 .casino-card.featured {
+  border-color: #c4a882;
+  background: linear-gradient(135deg, #fff, #fdf8f0);
+}
+body.theme-v2 .casino-badge {
+  background: rgba(124, 92, 62, 0.10);
+  color: #7c5c3e;
+}
+body.theme-v2 .casino-bonus { color: #7c5c3e; }
+body.theme-v2 .casino-bonus-sub { color: #8a8a98; }
+body.theme-v2 .casino-features li { color: #5a5a68; }
+body.theme-v2 .casino-features li::before { color: #7c5c3e; }
+body.theme-v2 .casino-logo {
+  background: #1a1a2e;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+body.theme-v2 .btn-cta {
+  background: #7c5c3e;
+  color: #fff;
+}
+body.theme-v2 .btn-cta:hover { background: #8d6a48; }
+body.theme-v2 .btn-cta--outline {
+  border-color: #7c5c3e;
+  color: #7c5c3e;
+  background: transparent;
+}
+body.theme-v2 .btn-cta--outline:hover { background: rgba(124, 92, 62, 0.08); }
+
+body.theme-v2 .article-card {
+  background: #fff;
+  border-color: #e8e4de;
+}
+body.theme-v2 .article-card-img {
+  background: linear-gradient(135deg, #f0ece6, #e8e0d4);
+}
+body.theme-v2 .article-card-tag { color: #7c5c3e; }
+body.theme-v2 .article-card-title { color: #2c2c35; }
+body.theme-v2 .article-card-excerpt { color: #6b6b78; }
+body.theme-v2 .article-card-link { color: #7c5c3e; }
+
+body.theme-v2 .trust-card {
+  background: #fff;
+  border-color: #e8e4de;
+}
+body.theme-v2 .trust-title { color: #2c2c35; }
+body.theme-v2 .trust-desc { color: #6b6b78; }
+
+body.theme-v2 .section-header p { color: #6b6b78; }
+body.theme-v2 .section-header h2 { color: #2c2c35; }
+
+body.theme-v2 .site-footer {
+  background: #f0ece6;
+  border-top-color: #e0dcd4;
+}
+body.theme-v2 .footer-col a { color: #7a7a88; }
+body.theme-v2 .footer-col a:hover { color: #2c2c35; }
+body.theme-v2 .footer-col h4 { color: #999; }
+body.theme-v2 .footer-brand-col .footer-desc { color: #7a7a88; }
+body.theme-v2 .footer-disclaimer { color: #999; }
+body.theme-v2 .footer-copy { color: #aaa; }
+body.theme-v2 .footer-bottom { border-top-color: #ddd8ce; }
+
+/* Review / guide / legal content */
+body.theme-v2 .review-content p,
+body.theme-v2 .guide-content p,
+body.theme-v2 .legal-content p { color: #4a4a58; }
+body.theme-v2 .review-content ul li,
+body.theme-v2 .guide-content li,
+body.theme-v2 .legal-content ul li { color: #5a5a68; }
+body.theme-v2 .review-content h2,
+body.theme-v2 .guide-content h2,
+body.theme-v2 .legal-content h2 { color: #2c2c35; border-bottom-color: #e8e4de; }
+body.theme-v2 .review-bonus { color: #7c5c3e; }
+body.theme-v2 .guide-toc { background: #fff; border-color: #e8e4de; }
+body.theme-v2 .guide-toc a { color: #6b6b78; }
+body.theme-v2 .guide-toc a:hover { color: #7c5c3e; }
+body.theme-v2 .guide-content blockquote { border-left-color: #7c5c3e; background: rgba(124,92,62,0.05); }
+body.theme-v2 .tip-box { background: rgba(124,92,62,0.05); border-color: rgba(124,92,62,0.15); }
+body.theme-v2 .tip-box .tip-label { color: #7c5c3e; }
+body.theme-v2 .guide-content ul li::before,
+body.theme-v2 .guide-content ol li::before,
+body.theme-v2 .legal-content ul li::before { color: #7c5c3e; }
+body.theme-v2 .review-cta-banner { background: linear-gradient(135deg, #fff, #fdf8f0); border-color: #e8e4de; }
+body.theme-v2 .pros-list, body.theme-v2 .cons-list { background: #fff; }
+body.theme-v2 .info-table td { border-bottom-color: #e8e4de; }
+body.theme-v2 .info-table td:first-child { color: #888; }
+body.theme-v2 .info-table td:last-child { color: #2c2c35; }
+body.theme-v2 .form-group input,
+body.theme-v2 .form-group textarea,
+body.theme-v2 .form-group select {
+  background: #fff;
+  border-color: #d4d0c8;
+  color: #2c2c35;
+}
+body.theme-v2 .form-group input:focus,
+body.theme-v2 .form-group textarea:focus,
+body.theme-v2 .form-group select:focus { border-color: #7c5c3e; }
+body.theme-v2 .form-group label { color: #4a4a58; }
+body.theme-v2 .breadcrumb a { color: #8a8a98; }
+body.theme-v2 .breadcrumb a:hover { color: #7c5c3e; }
+
+/* FAQ */
+body.theme-v2 details.faq-item { background: #fff; border-color: #e8e4de; }
+body.theme-v2 details.faq-item:hover { border-color: rgba(124,92,62,0.3); }
+body.theme-v2 details.faq-item summary { color: #2c2c35; }
+body.theme-v2 details.faq-item summary::after { color: #7c5c3e; }
+body.theme-v2 details.faq-item[open] summary { border-bottom-color: #e8e4de; }
+body.theme-v2 details.faq-item .faq-answer { color: #5a5a68; }
+body.theme-v2 details.faq-item .faq-answer a { color: #7c5c3e; }
+body.theme-v2 .faq-category h2 { color: #2c2c35; border-bottom-color: rgba(124,92,62,0.2); }
+
+/* Glossary */
+body.theme-v2 .glossary-nav { background: #fff; border-color: #e8e4de; }
+body.theme-v2 .glossary-nav a { color: #7c5c3e; background: rgba(124,92,62,0.06); }
+body.theme-v2 .glossary-nav a:hover { background: rgba(124,92,62,0.15); color: #2c2c35; }
+body.theme-v2 .glossary-section h2 { color: #7c5c3e; border-bottom-color: rgba(124,92,62,0.2); }
+body.theme-v2 .glossary-term { color: #7c5c3e; }
+body.theme-v2 .glossary-def { color: #5a5a68; border-bottom-color: #e8e4de; }
+
+/* Mobile nav */
+body.theme-v2 .main-nav.open { background: #faf8f5; border-bottom-color: #e8e4de; }
+
+/* ============================================================
+   Theme: v3 — Bold / Neon (deep black, neon glows)
+   ============================================================ */
+body.theme-v3 {
+  background: #000000;
+  color: #f0f0f5;
+}
+body.theme-v3 .site-header {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(24px);
+  border-bottom-color: rgba(168, 85, 247, 0.3);
+}
+body.theme-v3 .lang-bar {
+  background: #000;
+}
+body.theme-v3 .lang-select {
+  background: #0a0a14;
+}
+
+body.theme-v3 .page-hero::before {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+}
+body.theme-v3 .page-hero h1 .accent { color: #8b5cf6; }
+
+body.theme-v3 .section--alt { background: rgba(255, 255, 255, 0.02); }
+
+body.theme-v3 .casino-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(168, 85, 247, 0.15);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.05);
+}
+body.theme-v3 .casino-card.featured {
+  border-color: rgba(139, 92, 246, 0.4);
+  background: rgba(139, 92, 246, 0.06);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.1);
+}
+body.theme-v3 .casino-badge {
+  background: rgba(139, 92, 246, 0.2);
+  color: #c4b5fd;
+}
+body.theme-v3 .casino-bonus { color: #00e5b5; }
+
+body.theme-v3 .btn-cta {
+  background: linear-gradient(135deg, #8b5cf6, #00e5b5);
+  color: #000;
+  font-weight: 800;
+}
+body.theme-v3 .btn-cta:hover {
+  background: linear-gradient(135deg, #9d6fff, #00f5c5);
+  box-shadow: 0 0 24px rgba(139, 92, 246, 0.4);
+}
+body.theme-v3 .btn-cta--outline {
+  border-color: #8b5cf6;
+  color: #c4b5fd;
+  background: transparent;
+}
+body.theme-v3 .btn-cta--outline:hover { background: rgba(139, 92, 246, 0.15); }
+
+body.theme-v3 .article-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(168, 85, 247, 0.15);
+}
+body.theme-v3 .article-card-tag { color: #8b5cf6; }
+body.theme-v3 .article-card-link { color: #00e5b5; }
+
+body.theme-v3 .trust-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(168, 85, 247, 0.1);
+}
+
+body.theme-v3 .site-footer {
+  background: #000;
+}
+
+body.theme-v3 .review-cta-banner {
+  border-color: rgba(139, 92, 246, 0.3);
+  background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(0,229,181,0.05));
+}
+body.theme-v3 .guide-content blockquote { border-left-color: #8b5cf6; background: rgba(139,92,246,0.08); }
+body.theme-v3 .guide-content ul li::before,
+body.theme-v3 .guide-content ol li::before,
+body.theme-v3 .legal-content ul li::before { color: #8b5cf6; }
+body.theme-v3 details.faq-item { background: rgba(255,255,255,0.03); border-color: rgba(168,85,247,0.15); }
+body.theme-v3 details.faq-item:hover { border-color: rgba(139,92,246,0.35); }
+body.theme-v3 details.faq-item summary::after { color: #8b5cf6; }
+body.theme-v3 .faq-category h2 { border-bottom-color: rgba(139,92,246,0.2); }
+body.theme-v3 .glossary-nav a { color: #c4b5fd; background: rgba(139,92,246,0.1); }
+body.theme-v3 .glossary-section h2 { color: #8b5cf6; border-bottom-color: rgba(139,92,246,0.2); }
+body.theme-v3 .glossary-term { color: #00e5b5; }
+
+/* ============================================================
+   Theme: v4 — Minimal / Light Mode (white, dark text, clean)
+   ============================================================ */
+body.theme-v4 {
+  background: #ffffff;
+  color: #1a1a24;
+}
+body.theme-v4 .site-header {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom-color: #eee;
+}
+body.theme-v4 .site-header .logo-text { color: #1a1a24; }
+body.theme-v4 .main-nav a { color: #6b6b78; }
+body.theme-v4 .main-nav a:hover,
+body.theme-v4 .main-nav a.active { color: #1a1a24; }
+
+body.theme-v4 .lang-bar {
+  background: #f8f8f8;
+  border-bottom-color: #eee;
+  color: #888;
+}
+body.theme-v4 .lang-select {
+  background: #fff;
+  color: #333;
+  border-color: #ddd;
+}
+
+body.theme-v4 .page-hero::before {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, transparent 70%);
+}
+body.theme-v4 .page-hero h1 { color: #1a1a24; }
+body.theme-v4 .page-hero h1 .accent { color: #6366f1; }
+body.theme-v4 .page-hero .hero-sub { color: #6b7280; }
+
+body.theme-v4 .section--alt { background: #f9fafb; }
+body.theme-v4 .section-header h2 { color: #1a1a24; }
+body.theme-v4 .section-header p { color: #6b7280; }
+
+body.theme-v4 .casino-card {
+  background: #fff;
+  border-color: #e5e7eb;
+}
+body.theme-v4 .casino-card.featured {
+  border-color: #c7d2fe;
+  background: #fff;
+}
+body.theme-v4 .casino-badge {
+  background: rgba(99, 102, 241, 0.08);
+  color: #6366f1;
+}
+body.theme-v4 .casino-name { color: #1a1a24; }
+body.theme-v4 .casino-bonus { color: #6366f1; }
+body.theme-v4 .casino-bonus-sub { color: #9ca3af; }
+body.theme-v4 .casino-features li { color: #4b5563; }
+body.theme-v4 .casino-features li::before { color: #6366f1; }
+body.theme-v4 .casino-logo {
+  background: #1a1a2e;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+body.theme-v4 .btn-cta {
+  background: #1a1a24;
+  color: #fff;
+}
+body.theme-v4 .btn-cta:hover { background: #2a2a38; }
+body.theme-v4 .btn-cta--outline {
+  border-color: #d1d5db;
+  color: #4b5563;
+  background: transparent;
+}
+body.theme-v4 .btn-cta--outline:hover { background: #f3f4f6; }
+
+body.theme-v4 .article-card {
+  background: #fff;
+  border-color: #e5e7eb;
+}
+body.theme-v4 .article-card-img {
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+}
+body.theme-v4 .article-card-tag { color: #6366f1; }
+body.theme-v4 .article-card-title { color: #1a1a24; }
+body.theme-v4 .article-card-excerpt { color: #6b7280; }
+body.theme-v4 .article-card-link { color: #4b5563; }
+
+body.theme-v4 .trust-card {
+  background: #fff;
+  border-color: #e5e7eb;
+}
+body.theme-v4 .trust-title { color: #1a1a24; }
+body.theme-v4 .trust-desc { color: #6b7280; }
+
+body.theme-v4 .site-footer {
+  background: #f9fafb;
+  border-top-color: #e5e7eb;
+}
+body.theme-v4 .footer-col a { color: #6b7280; }
+body.theme-v4 .footer-col a:hover { color: #1a1a24; }
+body.theme-v4 .footer-col h4 { color: #9ca3af; }
+body.theme-v4 .footer-brand-col .footer-desc { color: #6b7280; }
+body.theme-v4 .footer-disclaimer { color: #9ca3af; }
+body.theme-v4 .footer-copy { color: #d1d5db; }
+body.theme-v4 .footer-bottom { border-top-color: #e5e7eb; }
+
+/* Review / guide / legal */
+body.theme-v4 .review-content p,
+body.theme-v4 .guide-content p,
+body.theme-v4 .legal-content p { color: #4b5563; }
+body.theme-v4 .review-content ul li,
+body.theme-v4 .guide-content li,
+body.theme-v4 .legal-content ul li { color: #4b5563; }
+body.theme-v4 .review-content h2,
+body.theme-v4 .guide-content h2,
+body.theme-v4 .legal-content h2 { color: #1a1a24; border-bottom-color: #e5e7eb; }
+body.theme-v4 .review-bonus { color: #6366f1; }
+body.theme-v4 .guide-toc { background: #fff; border-color: #e5e7eb; }
+body.theme-v4 .guide-toc h4 { color: #9ca3af; }
+body.theme-v4 .guide-toc a { color: #6b7280; }
+body.theme-v4 .guide-toc a:hover { color: #6366f1; }
+body.theme-v4 .guide-content blockquote { border-left-color: #6366f1; background: rgba(99,102,241,0.04); color: #4b5563; }
+body.theme-v4 .tip-box { background: rgba(99,102,241,0.04); border-color: rgba(99,102,241,0.12); }
+body.theme-v4 .tip-box .tip-label { color: #6366f1; }
+body.theme-v4 .guide-content ul li::before,
+body.theme-v4 .guide-content ol li::before,
+body.theme-v4 .legal-content ul li::before { color: #6366f1; }
+body.theme-v4 .review-cta-banner { background: #f9fafb; border-color: #e5e7eb; }
+body.theme-v4 .review-cta-banner h3 { color: #1a1a24; }
+body.theme-v4 .review-cta-banner p { color: #6b7280; }
+body.theme-v4 .pros-list, body.theme-v4 .cons-list { background: #f9fafb; }
+body.theme-v4 .info-table td { border-bottom-color: #e5e7eb; }
+body.theme-v4 .info-table td:first-child { color: #9ca3af; }
+body.theme-v4 .info-table td:last-child { color: #1a1a24; }
+body.theme-v4 .form-group input,
+body.theme-v4 .form-group textarea,
+body.theme-v4 .form-group select {
+  background: #fff;
+  border-color: #d1d5db;
+  color: #1a1a24;
+}
+body.theme-v4 .form-group input:focus,
+body.theme-v4 .form-group textarea:focus,
+body.theme-v4 .form-group select:focus { border-color: #6366f1; }
+body.theme-v4 .form-group label { color: #4b5563; }
+body.theme-v4 .breadcrumb a { color: #9ca3af; }
+body.theme-v4 .breadcrumb a:hover { color: #6366f1; }
+body.theme-v4 .breadcrumb { color: #9ca3af; }
+
+/* FAQ */
+body.theme-v4 details.faq-item { background: #fff; border-color: #e5e7eb; }
+body.theme-v4 details.faq-item:hover { border-color: #c7d2fe; }
+body.theme-v4 details.faq-item summary { color: #1a1a24; }
+body.theme-v4 details.faq-item summary::after { color: #6366f1; }
+body.theme-v4 details.faq-item[open] summary { border-bottom-color: #e5e7eb; }
+body.theme-v4 details.faq-item .faq-answer { color: #4b5563; }
+body.theme-v4 details.faq-item .faq-answer a { color: #6366f1; }
+body.theme-v4 .faq-category h2 { color: #1a1a24; border-bottom-color: rgba(99,102,241,0.2); }
+
+/* Glossary */
+body.theme-v4 .glossary-nav { background: #fff; border-color: #e5e7eb; }
+body.theme-v4 .glossary-nav a { color: #6366f1; background: rgba(99,102,241,0.06); }
+body.theme-v4 .glossary-nav a:hover { background: rgba(99,102,241,0.12); color: #1a1a24; }
+body.theme-v4 .glossary-section h2 { color: #6366f1; border-bottom-color: rgba(99,102,241,0.2); }
+body.theme-v4 .glossary-term { color: #6366f1; }
+body.theme-v4 .glossary-def { color: #4b5563; border-bottom-color: #e5e7eb; }
+
+/* Mobile nav */
+body.theme-v4 .main-nav.open { background: #fff; border-bottom-color: #eee; }
+
+/* ============================================================
+   Theme: v5 — Casino-First / Direct (warm dark blue, indigo/emerald)
+   ============================================================ */
+body.theme-v5 {
+  background: #0c0f1a;
+  color: #d8d8e4;
+}
+body.theme-v5 .site-header {
+  background: rgba(12, 15, 26, 0.9);
+  border-bottom-color: rgba(99, 102, 241, 0.2);
+}
+body.theme-v5 .lang-bar {
+  background: #080b14;
+}
+body.theme-v5 .lang-select {
+  background: #0f1326;
+}
+
+body.theme-v5 .page-hero::before {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+}
+body.theme-v5 .page-hero h1 .accent { color: #6366f1; }
+
+body.theme-v5 .section--alt { background: rgba(255, 255, 255, 0.015); }
+
+body.theme-v5 .casino-card {
+  background: #141829;
+  border-color: rgba(99, 102, 241, 0.1);
+}
+body.theme-v5 .casino-card.featured {
+  border-color: rgba(99, 102, 241, 0.3);
+  background: linear-gradient(135deg, #141829, #1a1540);
+}
+body.theme-v5 .casino-badge {
+  background: rgba(99, 102, 241, 0.15);
+  color: #818cf8;
+}
+body.theme-v5 .casino-bonus { color: #34d399; }
+body.theme-v5 .casino-features li::before { color: #34d399; }
+
+body.theme-v5 .btn-cta {
+  background: #34d399;
+  color: #0c0f1a;
+}
+body.theme-v5 .btn-cta:hover { background: #4ae8ab; }
+body.theme-v5 .btn-cta--outline {
+  border-color: #6366f1;
+  color: #818cf8;
+  background: transparent;
+}
+body.theme-v5 .btn-cta--outline:hover { background: rgba(99, 102, 241, 0.1); }
+
+body.theme-v5 .article-card {
+  background: #141829;
+  border-color: rgba(99, 102, 241, 0.1);
+}
+body.theme-v5 .article-card-tag { color: #6366f1; }
+body.theme-v5 .article-card-link { color: #34d399; }
+
+body.theme-v5 .trust-card {
+  background: #141829;
+  border-color: rgba(99, 102, 241, 0.08);
+}
+
+body.theme-v5 .site-footer {
+  background: #080b14;
+}
+
+body.theme-v5 .review-cta-banner { background: linear-gradient(135deg, #141829, #1a1540); border-color: rgba(99,102,241,0.2); }
+body.theme-v5 .guide-content blockquote { border-left-color: #6366f1; background: rgba(99,102,241,0.06); }
+body.theme-v5 .guide-content ul li::before,
+body.theme-v5 .guide-content ol li::before,
+body.theme-v5 .legal-content ul li::before { color: #6366f1; }
+body.theme-v5 .tip-box { background: rgba(52,211,153,0.06); border-color: rgba(52,211,153,0.15); }
+body.theme-v5 .tip-box .tip-label { color: #34d399; }
+body.theme-v5 .review-bonus { color: #34d399; }
+body.theme-v5 .glossary-nav a { color: #818cf8; background: rgba(99,102,241,0.08); }
+body.theme-v5 .glossary-section h2 { color: #6366f1; border-bottom-color: rgba(99,102,241,0.2); }
+body.theme-v5 .glossary-term { color: #34d399; }
+body.theme-v5 details.faq-item { background: #141829; border-color: rgba(99,102,241,0.1); }
+body.theme-v5 details.faq-item:hover { border-color: rgba(99,102,241,0.25); }
+body.theme-v5 details.faq-item summary::after { color: #6366f1; }
+body.theme-v5 .faq-category h2 { border-bottom-color: rgba(99,102,241,0.2); }
+body.theme-v5 .pros-list, body.theme-v5 .cons-list { background: #141829; }
+body.theme-v5 .guide-toc { background: #141829; border-color: rgba(99,102,241,0.1); }
+body.theme-v5 .form-group input,
+body.theme-v5 .form-group textarea,
+body.theme-v5 .form-group select { background: #141829; border-color: rgba(99,102,241,0.15); }
+body.theme-v5 .form-group input:focus,
+body.theme-v5 .form-group textarea:focus,
+body.theme-v5 .form-group select:focus { border-color: #6366f1; }
+
+/* ============================================================
+   Theme: v6 — Horizontal Cards / Light Comparison (light gray, white cards, indigo)
+   ============================================================ */
+body.theme-v6 {
+  background: #f4f6f9;
+  color: #1f2937;
+}
+body.theme-v6 .site-header {
+  background: #fff;
+  border-bottom-color: #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+body.theme-v6 .site-header .logo-text { color: #1f2937; }
+body.theme-v6 .main-nav a { color: #6b7280; }
+body.theme-v6 .main-nav a:hover,
+body.theme-v6 .main-nav a.active { color: #1f2937; }
+
+body.theme-v6 .lang-bar {
+  background: #eef0f4;
+  border-bottom-color: #dde0e6;
+  color: #6b7280;
+}
+body.theme-v6 .lang-select {
+  background: #fff;
+  color: #1f2937;
+  border-color: #d1d5db;
+}
+
+body.theme-v6 .page-hero::before {
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.06) 0%, transparent 70%);
+}
+body.theme-v6 .page-hero h1 { color: #111827; }
+body.theme-v6 .page-hero h1 .accent { color: #4f46e5; }
+body.theme-v6 .page-hero .hero-sub { color: #6b7280; }
+
+body.theme-v6 .section--alt { background: #fff; }
+body.theme-v6 .section-header h2 { color: #111827; }
+body.theme-v6 .section-header p { color: #6b7280; }
+
+body.theme-v6 .casino-card {
+  background: #fff;
+  border-color: #e5e7eb;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+body.theme-v6 .casino-card.featured {
+  border-color: #c7d2fe;
+  background: #fff;
+}
+body.theme-v6 .casino-badge {
+  background: rgba(79, 70, 229, 0.08);
+  color: #4f46e5;
+}
+body.theme-v6 .casino-name { color: #1f2937; }
+body.theme-v6 .casino-bonus { color: #4f46e5; }
+body.theme-v6 .casino-bonus-sub { color: #9ca3af; }
+body.theme-v6 .casino-features li { color: #4b5563; }
+body.theme-v6 .casino-features li::before { color: #4f46e5; }
+body.theme-v6 .casino-logo {
+  background: #1a1a2e;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+body.theme-v6 .btn-cta {
+  background: #4f46e5;
+  color: #fff;
+}
+body.theme-v6 .btn-cta:hover { background: #4338ca; }
+body.theme-v6 .btn-cta--outline {
+  border-color: #c7d2fe;
+  color: #4f46e5;
+  background: transparent;
+}
+body.theme-v6 .btn-cta--outline:hover { background: rgba(79, 70, 229, 0.06); }
+
+body.theme-v6 .article-card {
+  background: #fff;
+  border-color: #e5e7eb;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+body.theme-v6 .article-card-img {
+  background: linear-gradient(135deg, #eef0f4, #dde0e8);
+}
+body.theme-v6 .article-card-tag { color: #4f46e5; }
+body.theme-v6 .article-card-title { color: #1f2937; }
+body.theme-v6 .article-card-excerpt { color: #6b7280; }
+body.theme-v6 .article-card-link { color: #4f46e5; }
+
+body.theme-v6 .trust-card {
+  background: #fff;
+  border-color: #e5e7eb;
+}
+body.theme-v6 .trust-title { color: #1f2937; }
+body.theme-v6 .trust-desc { color: #6b7280; }
+
+body.theme-v6 .site-footer {
+  background: #fff;
+  border-top-color: #e5e7eb;
+}
+body.theme-v6 .footer-col a { color: #6b7280; }
+body.theme-v6 .footer-col a:hover { color: #1f2937; }
+body.theme-v6 .footer-col h4 { color: #9ca3af; }
+body.theme-v6 .footer-brand-col .footer-desc { color: #6b7280; }
+body.theme-v6 .footer-disclaimer { color: #9ca3af; }
+body.theme-v6 .footer-copy { color: #d1d5db; }
+body.theme-v6 .footer-bottom { border-top-color: #e5e7eb; }
+
+/* Review / guide / legal */
+body.theme-v6 .review-content p,
+body.theme-v6 .guide-content p,
+body.theme-v6 .legal-content p { color: #4b5563; }
+body.theme-v6 .review-content ul li,
+body.theme-v6 .guide-content li,
+body.theme-v6 .legal-content ul li { color: #4b5563; }
+body.theme-v6 .review-content h2,
+body.theme-v6 .guide-content h2,
+body.theme-v6 .legal-content h2 { color: #1f2937; border-bottom-color: #e5e7eb; }
+body.theme-v6 .review-bonus { color: #4f46e5; }
+body.theme-v6 .guide-toc { background: #fff; border-color: #e5e7eb; }
+body.theme-v6 .guide-toc h4 { color: #9ca3af; }
+body.theme-v6 .guide-toc a { color: #6b7280; }
+body.theme-v6 .guide-toc a:hover { color: #4f46e5; }
+body.theme-v6 .guide-content blockquote { border-left-color: #4f46e5; background: rgba(79,70,229,0.04); color: #4b5563; }
+body.theme-v6 .tip-box { background: rgba(79,70,229,0.04); border-color: rgba(79,70,229,0.12); }
+body.theme-v6 .tip-box .tip-label { color: #4f46e5; }
+body.theme-v6 .guide-content ul li::before,
+body.theme-v6 .guide-content ol li::before,
+body.theme-v6 .legal-content ul li::before { color: #4f46e5; }
+body.theme-v6 .review-cta-banner { background: #fff; border-color: #e5e7eb; }
+body.theme-v6 .review-cta-banner h3 { color: #1f2937; }
+body.theme-v6 .review-cta-banner p { color: #6b7280; }
+body.theme-v6 .pros-list, body.theme-v6 .cons-list { background: #fff; }
+body.theme-v6 .info-table td { border-bottom-color: #e5e7eb; }
+body.theme-v6 .info-table td:first-child { color: #9ca3af; }
+body.theme-v6 .info-table td:last-child { color: #1f2937; }
+body.theme-v6 .form-group input,
+body.theme-v6 .form-group textarea,
+body.theme-v6 .form-group select {
+  background: #fff;
+  border-color: #d1d5db;
+  color: #1f2937;
+}
+body.theme-v6 .form-group input:focus,
+body.theme-v6 .form-group textarea:focus,
+body.theme-v6 .form-group select:focus { border-color: #4f46e5; }
+body.theme-v6 .form-group label { color: #4b5563; }
+body.theme-v6 .breadcrumb a { color: #9ca3af; }
+body.theme-v6 .breadcrumb a:hover { color: #4f46e5; }
+body.theme-v6 .breadcrumb { color: #9ca3af; }
+
+/* FAQ */
+body.theme-v6 details.faq-item { background: #fff; border-color: #e5e7eb; }
+body.theme-v6 details.faq-item:hover { border-color: #c7d2fe; }
+body.theme-v6 details.faq-item summary { color: #1f2937; }
+body.theme-v6 details.faq-item summary::after { color: #4f46e5; }
+body.theme-v6 details.faq-item[open] summary { border-bottom-color: #e5e7eb; }
+body.theme-v6 details.faq-item .faq-answer { color: #4b5563; }
+body.theme-v6 details.faq-item .faq-answer a { color: #4f46e5; }
+body.theme-v6 .faq-category h2 { color: #1f2937; border-bottom-color: rgba(79,70,229,0.2); }
+
+/* Glossary */
+body.theme-v6 .glossary-nav { background: #fff; border-color: #e5e7eb; }
+body.theme-v6 .glossary-nav a { color: #4f46e5; background: rgba(79,70,229,0.06); }
+body.theme-v6 .glossary-nav a:hover { background: rgba(79,70,229,0.12); color: #1f2937; }
+body.theme-v6 .glossary-section h2 { color: #4f46e5; border-bottom-color: rgba(79,70,229,0.2); }
+body.theme-v6 .glossary-term { color: #4f46e5; }
+body.theme-v6 .glossary-def { color: #4b5563; border-bottom-color: #e5e7eb; }
+
+/* Mobile nav */
+body.theme-v6 .main-nav.open { background: #fff; border-bottom-color: #e5e7eb; }
+
+/* ============================================================
+   Theme: v7 — Comparison Table (dark steel, blue accent)
+   ============================================================ */
+body.theme-v7 {
+  background: #101827;
+  color: #e5e7eb;
+}
+body.theme-v7 .site-header {
+  background: rgba(16, 24, 39, 0.92);
+  border-bottom-color: rgba(59, 130, 246, 0.15);
+}
+body.theme-v7 .lang-bar {
+  background: #0c1420;
+}
+body.theme-v7 .lang-select {
+  background: #16203a;
+}
+
+body.theme-v7 .page-hero::before {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.10) 0%, transparent 70%);
+}
+body.theme-v7 .page-hero h1 .accent { color: #3b82f6; }
+
+body.theme-v7 .section--alt { background: rgba(255, 255, 255, 0.015); }
+
+body.theme-v7 .casino-card {
+  background: #1e293b;
+  border-color: rgba(59, 130, 246, 0.1);
+}
+body.theme-v7 .casino-card.featured {
+  border-color: rgba(59, 130, 246, 0.3);
+  background: linear-gradient(135deg, #1e293b, #1a2540);
+}
+body.theme-v7 .casino-badge {
+  background: rgba(59, 130, 246, 0.12);
+  color: #60a5fa;
+}
+body.theme-v7 .casino-bonus { color: #3b82f6; }
+body.theme-v7 .casino-features li::before { color: #3b82f6; }
+
+body.theme-v7 .btn-cta {
+  background: #3b82f6;
+  color: #fff;
+}
+body.theme-v7 .btn-cta:hover { background: #2563eb; }
+body.theme-v7 .btn-cta--outline {
+  border-color: #3b82f6;
+  color: #60a5fa;
+  background: transparent;
+}
+body.theme-v7 .btn-cta--outline:hover { background: rgba(59, 130, 246, 0.1); }
+
+body.theme-v7 .article-card {
+  background: #1e293b;
+  border-color: rgba(59, 130, 246, 0.1);
+}
+body.theme-v7 .article-card-tag { color: #3b82f6; }
+body.theme-v7 .article-card-link { color: #60a5fa; }
+
+body.theme-v7 .trust-card {
+  background: #1e293b;
+  border-color: rgba(59, 130, 246, 0.08);
+}
+
+body.theme-v7 .site-footer {
+  background: #0c1420;
+}
+
+body.theme-v7 .review-cta-banner { background: linear-gradient(135deg, #1e293b, #1a2540); border-color: rgba(59,130,246,0.2); }
+body.theme-v7 .guide-content blockquote { border-left-color: #3b82f6; background: rgba(59,130,246,0.06); }
+body.theme-v7 .guide-content ul li::before,
+body.theme-v7 .guide-content ol li::before,
+body.theme-v7 .legal-content ul li::before { color: #3b82f6; }
+body.theme-v7 .tip-box { background: rgba(59,130,246,0.06); border-color: rgba(59,130,246,0.15); }
+body.theme-v7 .tip-box .tip-label { color: #3b82f6; }
+body.theme-v7 .review-bonus { color: #3b82f6; }
+body.theme-v7 .glossary-nav a { color: #60a5fa; background: rgba(59,130,246,0.08); }
+body.theme-v7 .glossary-section h2 { color: #3b82f6; border-bottom-color: rgba(59,130,246,0.2); }
+body.theme-v7 .glossary-term { color: #60a5fa; }
+body.theme-v7 details.faq-item { background: #1e293b; border-color: rgba(59,130,246,0.1); }
+body.theme-v7 details.faq-item:hover { border-color: rgba(59,130,246,0.25); }
+body.theme-v7 details.faq-item summary::after { color: #3b82f6; }
+body.theme-v7 .faq-category h2 { border-bottom-color: rgba(59,130,246,0.2); }
+body.theme-v7 .pros-list, body.theme-v7 .cons-list { background: #1e293b; }
+body.theme-v7 .guide-toc { background: #1e293b; border-color: rgba(59,130,246,0.1); }
+body.theme-v7 .form-group input,
+body.theme-v7 .form-group textarea,
+body.theme-v7 .form-group select { background: #1e293b; border-color: rgba(59,130,246,0.15); }
+body.theme-v7 .form-group input:focus,
+body.theme-v7 .form-group textarea:focus,
+body.theme-v7 .form-group select:focus { border-color: #3b82f6; }
+
+/* ============================================================
+   Theme: v8 — Single Casino Focus (emerald dark, green accent)
+   ============================================================ */
+body.theme-v8 {
+  background: #050b0a;
+  color: #d4e4df;
+}
+body.theme-v8 .site-header {
+  background: rgba(5, 11, 10, 0.9);
+  border-bottom-color: rgba(16, 185, 129, 0.15);
+}
+body.theme-v8 .lang-bar {
+  background: #030706;
+}
+body.theme-v8 .lang-select {
+  background: #0a1614;
+}
+
+body.theme-v8 .page-hero::before {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.10) 0%, transparent 70%);
+}
+body.theme-v8 .page-hero h1 .accent { color: #10b981; }
+
+body.theme-v8 .section--alt { background: rgba(16, 185, 129, 0.015); }
+
+body.theme-v8 .casino-card {
+  background: #0d1a17;
+  border-color: rgba(16, 185, 129, 0.1);
+}
+body.theme-v8 .casino-card.featured {
+  border-color: rgba(16, 185, 129, 0.3);
+  background: linear-gradient(135deg, #0d1a17, #0a1f18);
+}
+body.theme-v8 .casino-badge {
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+}
+body.theme-v8 .casino-bonus { color: #10b981; }
+body.theme-v8 .casino-features li::before { color: #10b981; }
+
+body.theme-v8 .btn-cta {
+  background: #10b981;
+  color: #050b0a;
+}
+body.theme-v8 .btn-cta:hover { background: #22d3a0; }
+body.theme-v8 .btn-cta--outline {
+  border-color: #10b981;
+  color: #34d399;
+  background: transparent;
+}
+body.theme-v8 .btn-cta--outline:hover { background: rgba(16, 185, 129, 0.1); }
+
+body.theme-v8 .article-card {
+  background: #0d1a17;
+  border-color: rgba(16, 185, 129, 0.1);
+}
+body.theme-v8 .article-card-img {
+  background: linear-gradient(135deg, #0d1a17, #0a1f18);
+}
+body.theme-v8 .article-card-tag { color: #10b981; }
+body.theme-v8 .article-card-link { color: #34d399; }
+
+body.theme-v8 .trust-card {
+  background: #0d1a17;
+  border-color: rgba(16, 185, 129, 0.08);
+}
+
+body.theme-v8 .site-footer {
+  background: #030706;
+}
+
+body.theme-v8 .review-cta-banner { background: linear-gradient(135deg, #0d1a17, #0a1f18); border-color: rgba(16,185,129,0.2); }
+body.theme-v8 .guide-content blockquote { border-left-color: #10b981; background: rgba(16,185,129,0.06); }
+body.theme-v8 .guide-content ul li::before,
+body.theme-v8 .guide-content ol li::before,
+body.theme-v8 .legal-content ul li::before { color: #10b981; }
+body.theme-v8 .tip-box { background: rgba(16,185,129,0.06); border-color: rgba(16,185,129,0.15); }
+body.theme-v8 .tip-box .tip-label { color: #10b981; }
+body.theme-v8 .review-bonus { color: #10b981; }
+body.theme-v8 .glossary-nav a { color: #34d399; background: rgba(16,185,129,0.08); }
+body.theme-v8 .glossary-section h2 { color: #10b981; border-bottom-color: rgba(16,185,129,0.2); }
+body.theme-v8 .glossary-term { color: #34d399; }
+body.theme-v8 details.faq-item { background: #0d1a17; border-color: rgba(16,185,129,0.1); }
+body.theme-v8 details.faq-item:hover { border-color: rgba(16,185,129,0.25); }
+body.theme-v8 details.faq-item summary::after { color: #10b981; }
+body.theme-v8 .faq-category h2 { border-bottom-color: rgba(16,185,129,0.2); }
+body.theme-v8 .pros-list, body.theme-v8 .cons-list { background: #0d1a17; }
+body.theme-v8 .guide-toc { background: #0d1a17; border-color: rgba(16,185,129,0.1); }
+body.theme-v8 .form-group input,
+body.theme-v8 .form-group textarea,
+body.theme-v8 .form-group select { background: #0d1a17; border-color: rgba(16,185,129,0.15); }
+body.theme-v8 .form-group input:focus,
+body.theme-v8 .form-group textarea:focus,
+body.theme-v8 .form-group select:focus { border-color: #10b981; }
+
+/* ============================================================
+   Theme: v9 — Trust-First / Reversed (dark gradient, pink accent)
+   ============================================================ */
+body.theme-v9 {
+  background: #0a0a14;
+  color: #d4d4de;
+}
+body.theme-v9 .site-header {
+  background: rgba(10, 10, 20, 0.9);
+  border-bottom-color: rgba(244, 114, 182, 0.12);
+}
+body.theme-v9 .lang-bar {
+  background: #06060e;
+}
+body.theme-v9 .lang-select {
+  background: #0e0e1e;
+}
+
+body.theme-v9 .page-hero::before {
+  background: radial-gradient(circle, rgba(244, 114, 182, 0.10) 0%, transparent 70%);
+}
+body.theme-v9 .page-hero h1 .accent { color: #f472b6; }
+
+body.theme-v9 .section--alt { background: rgba(244, 114, 182, 0.015); }
+
+body.theme-v9 .casino-card {
+  background: #12121e;
+  border-color: rgba(244, 114, 182, 0.08);
+}
+body.theme-v9 .casino-card.featured {
+  border-color: rgba(244, 114, 182, 0.25);
+  background: linear-gradient(135deg, #12121e, #1a1028);
+}
+body.theme-v9 .casino-badge {
+  background: rgba(244, 114, 182, 0.12);
+  color: #f9a8d4;
+}
+body.theme-v9 .casino-bonus { color: #f472b6; }
+body.theme-v9 .casino-features li::before { color: #f472b6; }
+
+body.theme-v9 .btn-cta {
+  background: #f472b6;
+  color: #0a0a14;
+}
+body.theme-v9 .btn-cta:hover { background: #f687c0; }
+body.theme-v9 .btn-cta--outline {
+  border-color: #f472b6;
+  color: #f9a8d4;
+  background: transparent;
+}
+body.theme-v9 .btn-cta--outline:hover { background: rgba(244, 114, 182, 0.1); }
+
+body.theme-v9 .article-card {
+  background: #12121e;
+  border-color: rgba(244, 114, 182, 0.08);
+}
+body.theme-v9 .article-card-tag { color: #f472b6; }
+body.theme-v9 .article-card-link { color: #f9a8d4; }
+
+body.theme-v9 .trust-card {
+  background: #12121e;
+  border-color: rgba(244, 114, 182, 0.06);
+}
+
+body.theme-v9 .site-footer {
+  background: #06060e;
+}
+
+body.theme-v9 .review-cta-banner { background: linear-gradient(135deg, #12121e, #1a1028); border-color: rgba(244,114,182,0.15); }
+body.theme-v9 .guide-content blockquote { border-left-color: #f472b6; background: rgba(244,114,182,0.06); }
+body.theme-v9 .guide-content ul li::before,
+body.theme-v9 .guide-content ol li::before,
+body.theme-v9 .legal-content ul li::before { color: #f472b6; }
+body.theme-v9 .tip-box { background: rgba(244,114,182,0.06); border-color: rgba(244,114,182,0.15); }
+body.theme-v9 .tip-box .tip-label { color: #f472b6; }
+body.theme-v9 .review-bonus { color: #f472b6; }
+body.theme-v9 .glossary-nav a { color: #f9a8d4; background: rgba(244,114,182,0.08); }
+body.theme-v9 .glossary-section h2 { color: #f472b6; border-bottom-color: rgba(244,114,182,0.2); }
+body.theme-v9 .glossary-term { color: #f9a8d4; }
+body.theme-v9 details.faq-item { background: #12121e; border-color: rgba(244,114,182,0.08); }
+body.theme-v9 details.faq-item:hover { border-color: rgba(244,114,182,0.2); }
+body.theme-v9 details.faq-item summary::after { color: #f472b6; }
+body.theme-v9 .faq-category h2 { border-bottom-color: rgba(244,114,182,0.2); }
+body.theme-v9 .pros-list, body.theme-v9 .cons-list { background: #12121e; }
+body.theme-v9 .guide-toc { background: #12121e; border-color: rgba(244,114,182,0.08); }
+body.theme-v9 .form-group input,
+body.theme-v9 .form-group textarea,
+body.theme-v9 .form-group select { background: #12121e; border-color: rgba(244,114,182,0.12); }
+body.theme-v9 .form-group input:focus,
+body.theme-v9 .form-group textarea:focus,
+body.theme-v9 .form-group select:focus { border-color: #f472b6; }

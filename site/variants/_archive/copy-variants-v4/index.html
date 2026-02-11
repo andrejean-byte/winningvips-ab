@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winning VIPs — Check if You Qualify for Exclusive Casino Bonuses</title>
+  <meta name="description" content="These VIP casino bonuses aren't for everyone. Check if you qualify before claiming exclusive offers.">
+
+  <!-- CRITICAL: TRACKING (GTM) – DO NOT MODIFY -->
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-52ZZJVGW');</script>
+  <!-- End Google Tag Manager -->
+
+  <!--
+    ============================================================
+    VARIANT 4: PRE-QUALIFICATION
+    ============================================================
+    Persuasion strategy: Identity-based self-selection & commitment
+
+    CONVERSION GOAL: Increase high-intent clicks, reduce low-intent.
+
+    How this variant achieves the goal:
+    1. STRUCTURAL INVERSION — Qualification appears BEFORE any casino
+       offers. Users must self-select before seeing CTAs. This means
+       every user who reaches the casino grid has already mentally
+       committed "I am the right person for this."
+    2. EXCLUSIONARY HEADLINE — "These Bonuses Aren't for Everyone"
+       triggers self-assessment. Low-intent browsers leave; high-intent
+       players lean in.
+    3. COMMITMENT GATE — "YES, I QUALIFY" is an identity affirmation.
+       Users who click past this checkpoint have made a micro-commitment
+       that carries through to the casino CTAs.
+    4. EXPECTATION SETTING — Explicit text explains what happens after
+       clicking ("you'll be taken to their registration page"). This
+       eliminates surprise, so only users ready to register will click.
+    5. POSSESSIVE CTA — "CLAIM MY VIP OFFER" uses "MY" because the
+       user has already earned ownership through self-qualification.
+
+    Psychology:
+    - Self-perception theory: affirming "I qualify" changes self-image
+    - Commitment & consistency: micro-commitments cascade into action
+    - Reactance: explicit exclusion makes qualifiers MORE committed
+    - Endowment effect: "your offers" feel owned before clicking
+
+    Low-intent click reduction:
+    - No casino offers visible without scrolling past qualification
+    - Disqualification list is prominent and specific
+    - CTA says what happens next (registration page), no mystery
+    ============================================================
+  -->
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+      background: #0a0a0f; color: #e2e2e8; line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10, 10, 15, 0.85);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(124, 58, 237, 0.2); padding: 14px 0;
+    }
+    .header .container { display: flex; align-items: center; gap: 12px; }
+    .header-logo { width: 40px; height: 40px; border-radius: 8px; }
+    .header-title { font-size: 1.25rem; font-weight: 700; color: #fff; letter-spacing: -0.02em; }
+
+    .hero {
+      position: relative; padding: 100px 20px 60px;
+      text-align: center; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: 10%; left: 50%;
+      transform: translateX(-50%); width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+    .hero-headline {
+      font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; color: #fff;
+      line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 16px;
+    }
+    .hero-headline .accent { color: #7c3aed; }
+    .hero-subtext { font-size: 1.125rem; color: #9999aa; max-width: 520px; margin: 0 auto; }
+
+    .prequalification { padding: 80px 20px; }
+    .prequal-heading {
+      text-align: center; font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700; color: #fff; margin-bottom: 16px;
+    }
+    .prequal-sub {
+      text-align: center; font-size: 1rem; color: #9999aa;
+      max-width: 500px; margin: 0 auto 48px;
+    }
+    .prequal-grid {
+      display: grid; grid-template-columns: 1fr; gap: 24px;
+      max-width: 900px; margin: 0 auto 48px;
+    }
+    @media (min-width: 768px) {
+      .prequal-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .prequal-card {
+      background: #1a1a2e; border-radius: 16px; padding: 32px;
+      border-top: 3px solid;
+    }
+    .prequal-card--yes { border-color: #22c55e; }
+    .prequal-card--no { border-color: #ef4444; }
+    .prequal-card-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 20px; }
+    .prequal-card--yes .prequal-card-title { color: #22c55e; }
+    .prequal-card--no .prequal-card-title { color: #ef4444; }
+    .prequal-list {
+      list-style: none; display: flex; flex-direction: column; gap: 14px;
+    }
+    .prequal-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.95rem; color: #ccccd4;
+    }
+    .prequal-list li::before { font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .prequal-card--yes .prequal-list li::before { content: '✓'; color: #22c55e; }
+    .prequal-card--no .prequal-list li::before { content: '✗'; color: #ef4444; }
+
+    .commitment-gate { text-align: center; padding: 0 20px 80px; }
+    .commitment-text {
+      font-size: 1.1rem; color: #9999aa; margin-bottom: 8px;
+      max-width: 480px; margin-left: auto; margin-right: auto;
+    }
+    .commitment-text strong { color: #fff; }
+    .commitment-detail {
+      font-size: 0.85rem; color: #70708a; margin-bottom: 24px;
+      max-width: 480px; margin-left: auto; margin-right: auto;
+    }
+    .btn-cta {
+      display: inline-block; background: #00d4aa; color: #0a0a0f;
+      font-size: 1rem; font-weight: 700; padding: 14px 40px;
+      border-radius: 8px; transition: background 0.2s, transform 0.2s;
+      cursor: pointer; border: none;
+    }
+    .btn-cta:hover { background: #00eabb; transform: translateY(-1px); }
+    .btn-cta-large { font-size: 1.1rem; padding: 18px 48px; }
+
+    .trust-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; padding-top: 48px; }
+    .trust-item { text-align: center; }
+    .trust-icon { font-size: 1.5rem; margin-bottom: 6px; }
+    .trust-label { font-size: 0.875rem; font-weight: 600; color: #a78bfa; }
+
+    .cta-section { padding: 80px 20px; }
+    .cta-heading {
+      text-align: center; font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700; color: #fff; margin-bottom: 12px;
+    }
+    .cta-subheading { text-align: center; font-size: 1rem; color: #9999aa; margin-bottom: 48px; }
+    .casino-grid {
+      display: grid; grid-template-columns: 1fr; gap: 24px;
+      max-width: 1120px; margin: 0 auto;
+    }
+    @media (min-width: 768px) { .casino-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .casino-grid { grid-template-columns: repeat(3, 1fr); } }
+    .casino-card {
+      background: #1a1a2e; border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px; padding: 28px;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .casino-card:hover { border-color: rgba(124, 58, 237, 0.4); transform: translateY(-2px); }
+    .casino-badge {
+      display: inline-block; background: rgba(124, 58, 237, 0.12); color: #a78bfa;
+      font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.06em; padding: 3px 10px; border-radius: 999px; margin-bottom: 16px;
+    }
+    .casino-logo { width: 100px; height: auto; margin-bottom: 14px; }
+    .casino-name { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .casino-rating { color: #facc15; font-size: 0.875rem; margin-bottom: 14px; }
+    .casino-bonus { font-size: 1.15rem; font-weight: 700; color: #00d4aa; margin-bottom: 4px; }
+    .casino-bonus-sub { font-size: 0.85rem; color: #9999aa; margin-bottom: 16px; }
+    .casino-features {
+      list-style: none; font-size: 0.825rem; color: #b0b0be;
+      margin-bottom: 16px; display: flex; flex-direction: column; gap: 6px;
+    }
+    .casino-region { font-size: 0.75rem; color: #70708a; margin-bottom: 20px; }
+    .casino-card .btn-cta {
+      width: 100%; text-align: center; font-size: 0.95rem;
+      padding: 12px 24px; margin-top: auto;
+    }
+
+    .footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 48px 20px 32px; text-align: center;
+    }
+    .footer-logo { width: 36px; margin: 0 auto 12px; border-radius: 6px; }
+    .footer-brand { font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 20px; }
+    .footer-links {
+      display: flex; justify-content: center; gap: 24px;
+      flex-wrap: wrap; margin-bottom: 24px;
+    }
+    .footer-links a { font-size: 0.85rem; color: #9999aa; transition: color 0.2s; }
+    .footer-links a:hover { color: #a78bfa; }
+    .footer-disclaimer {
+      max-width: 640px; margin: 0 auto 16px;
+      font-size: 0.75rem; color: #555566; line-height: 1.7;
+    }
+    .footer-copy { font-size: 0.75rem; color: #444455; }
+  </style>
+</head>
+<body>
+
+  <!-- CRITICAL: TRACKING (GTM) – DO NOT MODIFY -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52ZZJVGW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- SECTION: HEADER — Sticky navigation with brand identity -->
+  <header class="header">
+    <div class="container">
+      <img src="../../assets/winning-vips-logo-iHxWsc-G.png" alt="Winning VIPs" class="header-logo">
+      <span class="header-title">Winning VIPs</span>
+    </div>
+  </header>
+
+  <!--
+    SECTION: HERO / HEADLINE — Exclusionary framing (no casino card)
+    - "Aren't for Everyone" triggers self-assessment: "Am I the exception?"
+    - No featured casino in hero — offers are withheld until after
+      qualification, creating a velvet rope effect.
+    - Low-intent visitors see the qualifier and leave. High-intent visitors
+      read on to see if they qualify.
+  -->
+  <section class="hero">
+    <div class="hero-content">
+      <!-- OPT V4-1: "Aren't for Everyone" is vague exclusion. "Ready-to-Register Players" defines the qualifying criterion explicitly. -->
+      <h1 class="hero-headline">These Bonuses <span class="accent">Are for Ready-to-Register Players</span></h1>
+      <!-- OPT V4-2: Defines "VIP" concretely (higher bonuses, up to 10x, verified links) instead of vague "right player" language. -->
+      <p class="hero-subtext">We negotiate higher welcome bonuses with licensed casinos — up to 10x the standard public offer. These rates are held for players who register through our verified links.</p>
+    </div>
+  </section>
+
+  <!--
+    SECTION: PRE-QUALIFICATION — Identity filter BEFORE any offers
+    - Placed BEFORE casino cards (structural inversion from control).
+    - "You qualify if..." uses commitment-oriented criteria: "ready to
+      register today", "understand wagering requirements." Each agreement
+      is a micro-commitment that cascades into the CTA.
+    - "You do NOT qualify if..." is firm and specific. Includes "just
+      browsing with no plan to sign up" — explicitly names and ejects
+      low-intent visitors.
+    - The stronger the filter, the more valuable qualifying feels.
+      Users who pass feel they've earned access.
+  -->
+  <section class="prequalification">
+    <div class="container">
+      <h2 class="prequal-heading">Do You Qualify?</h2>
+      <p class="prequal-sub">Read both columns honestly. These offers only convert value for the right player.</p>
+
+      <div class="prequal-grid">
+        <div class="prequal-card prequal-card--yes">
+          <h3 class="prequal-card-title">You qualify if...</h3>
+          <ul class="prequal-list">
+            <li>You're ready to register at a new casino today</li>
+            <li>You're 18+ and in a jurisdiction where online gambling is legal</li>
+            <li>You want a verified welcome bonus with clear, readable terms</li>
+            <li>You understand that bonuses have wagering requirements</li>
+            <li>You only play at licensed, regulated platforms</li>
+          </ul>
+        </div>
+        <div class="prequal-card prequal-card--no">
+          <h3 class="prequal-card-title">You do NOT qualify if...</h3>
+          <ul class="prequal-list">
+            <li>You're just browsing with no plan to sign up</li>
+            <li>You're under 18 or in a restricted jurisdiction</li>
+            <li>You have a history of problem gambling or are at risk</li>
+            <li>You expect "guaranteed wins" or no-strings bonuses</li>
+            <li>You prefer unlicensed offshore sites with no protections</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- OPT V4-4: Trust signals moved from commitment-gate to before the gate. Trust informs the qualification decision, so it should appear before the commitment ask. -->
+      <div class="trust-row">
+        <div class="trust-item">
+          <div class="trust-icon">&#128274;</div>
+          <div class="trust-label">Licensed &amp; Regulated</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">&#9989;</div>
+          <div class="trust-label">Verified Payouts</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">&#127873;</div>
+          <div class="trust-label">Exclusive VIP Rates</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+    SECTION: COMMITMENT GATE — Micro-commitment before offers
+    - "If you read the above and know you qualify" assumes the user
+      did the self-assessment. Clicking "YES, I QUALIFY" is an
+      identity affirmation, not a purchase action.
+    - Expectation text below explains exactly what happens next:
+      "Each link takes you to the casino's registration page."
+      This eliminates surprise and filters out anyone not ready
+      to actually sign up.
+    - Only users who self-select AND accept the expectation scroll
+      to the casino grid — these are high-intent clicks.
+  -->
+  <section class="commitment-gate">
+    <!-- OPT V4-3: Reduces double-gating friction. Simplified gate text and shorter CTA reduce cognitive load while maintaining commitment. -->
+    <p class="commitment-text">If the left column describes you, <strong>your VIP rates are below.</strong></p>
+    <p class="commitment-detail">Each link takes you to the casino's registration page, where your VIP welcome bonus is applied automatically.</p>
+    <a href="#offers" class="btn-cta btn-cta-large">SEE MY VIP RATES</a>
+  </section>
+
+  <!--
+    SECTION: CTA — Casino grid (appears AFTER qualification gate)
+    - "Your VIP Offers" — possessive language reinforces ownership.
+      The user earned these through self-qualification.
+    - CTA: "CLAIM MY VIP OFFER" uses "MY" because the offer
+      already feels like theirs. Consistent with the possessive
+      frame established by the commitment gate.
+    - Every click at this point comes from a user who:
+      1. Self-assessed against the qualification criteria
+      2. Affirmed "I qualify" at the gate
+      3. Understands they'll be taken to a registration page
+      → This is a high-intent click.
+  -->
+  <section class="cta-section" id="offers">
+    <div class="container">
+      <h2 class="cta-heading">Your VIP Offers</h2>
+      <p class="cta-subheading">You qualified. Each button opens the casino's registration page, where your VIP bonus is applied automatically.</p>
+
+      <div class="casino-grid">
+
+        <div class="casino-card">
+          <span class="casino-badge">Best Overall</span>
+          <img src="../../assets/neospin-h-CYhO2e-6.png" alt="NeoSpin" class="casino-logo">
+          <div class="casino-name">NeoSpin</div>
+          <div class="casino-rating">&#9733;&#9733;&#9733;&#9733;&#9733; 5/5</div>
+          <div class="casino-bonus">$11,000 + 300 Free Spins</div>
+          <div class="casino-bonus-sub">VIP Welcome Package</div>
+          <ul class="casino-features">
+            <li>7,000+ games from top providers</li>
+            <li>Crypto &amp; fiat payments</li>
+            <li>24/7 live support</li>
+          </ul>
+          <div class="casino-region">Available: AU, NZ, CA, EU</div>
+          <a href="#" class="btn-cta">CLAIM MY VIP OFFER</a>
+        </div>
+
+        <div class="casino-card">
+          <span class="casino-badge">Biggest Jackpot</span>
+          <img src="../../assets/golden-crown-h-BKdPXvqs.png" alt="Golden Crown" class="casino-logo">
+          <div class="casino-name">Golden Crown</div>
+          <div class="casino-rating">&#9733;&#9733;&#9733;&#9733;&#9734; 4.8/5</div>
+          <div class="casino-bonus">$1,000 + 300 Free Spins</div>
+          <div class="casino-bonus-sub">VIP Welcome Package</div>
+          <ul class="casino-features">
+            <li>Progressive jackpot network</li>
+            <li>VIP loyalty rewards</li>
+            <li>Fast withdrawals</li>
+          </ul>
+          <div class="casino-region">Available: AU, NZ, CA, EU</div>
+          <a href="#" class="btn-cta">CLAIM MY VIP OFFER</a>
+        </div>
+
+        <div class="casino-card">
+          <span class="casino-badge">Fastest Payouts</span>
+          <img src="../../assets/luckyvibe-h-BXFWYfG-.png" alt="LuckyVibe" class="casino-logo">
+          <div class="casino-name">LuckyVibe</div>
+          <div class="casino-rating">&#9733;&#9733;&#9733;&#9733;&#9734; 4/5</div>
+          <div class="casino-bonus">$5,000 + 300 Free Spins</div>
+          <div class="casino-bonus-sub">VIP Welcome Package</div>
+          <ul class="casino-features">
+            <li>Instant crypto withdrawals</li>
+            <li>5,000+ slot games</li>
+            <li>Weekly cashback offers</li>
+          </ul>
+          <div class="casino-region">Available: AU, NZ, CA, EU</div>
+          <a href="#" class="btn-cta">CLAIM MY VIP OFFER</a>
+        </div>
+
+        <div class="casino-card">
+          <span class="casino-badge">Best Welcome Bonus</span>
+          <img src="../../assets/skycrown-h-BxEMja5-.png" alt="SkyCrown" class="casino-logo">
+          <div class="casino-name">SkyCrown</div>
+          <div class="casino-rating">&#9733;&#9733;&#9733;&#9733;&#9734; 4.7/5</div>
+          <div class="casino-bonus">$8,000 + 400 Free Spins</div>
+          <div class="casino-bonus-sub">VIP Welcome Package</div>
+          <ul class="casino-features">
+            <li>Massive welcome package</li>
+            <li>Live dealer tables</li>
+            <li>Multi-currency support</li>
+          </ul>
+          <div class="casino-region">Available: AU, NZ, CA, EU</div>
+          <a href="#" class="btn-cta">CLAIM MY VIP OFFER</a>
+        </div>
+
+        <div class="casino-card">
+          <span class="casino-badge">VIP Favorite</span>
+          <img src="../../assets/wild-tokyo-h-BI0HV9m-.png" alt="Wild Tokyo" class="casino-logo">
+          <div class="casino-name">Wild Tokyo</div>
+          <div class="casino-rating">&#9733;&#9733;&#9733;&#9733;&#9734; 4.6/5</div>
+          <div class="casino-bonus">$5,300 + 600 Free Spins</div>
+          <div class="casino-bonus-sub">VIP Welcome Package</div>
+          <ul class="casino-features">
+            <li>Anime-themed experience</li>
+            <li>Exclusive VIP program</li>
+            <li>Daily tournaments</li>
+          </ul>
+          <div class="casino-region">Available: AU, NZ, CA, EU</div>
+          <a href="#" class="btn-cta">CLAIM MY VIP OFFER</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: FOOTER / DISCLAIMER — Legal, responsible gaming, affiliate disclosure, copyright -->
+  <footer class="footer">
+    <img src="../../assets/winning-vips-logo-iHxWsc-G.png" alt="Winning VIPs" class="footer-logo">
+    <div class="footer-brand">Winning VIPs</div>
+    <nav class="footer-links">
+      <a href="#">Responsible Gaming</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Contact</a>
+    </nav>
+    <p class="footer-disclaimer">
+      Gambling involves risk. Please play responsibly. Only gamble with money you can afford to lose.
+      If you or someone you know has a gambling problem, seek help at a licensed support service.
+      All casino offers are subject to terms and conditions. Players must be 18+ (or legal age in their jurisdiction).
+      This site contains affiliate links. We may receive compensation when you sign up through our links.
+    </p>
+    <p class="footer-copy">&copy; 2026 Winning VIPs. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

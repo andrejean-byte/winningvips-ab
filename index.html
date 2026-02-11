@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winning VIPs</title>
+
+  <!-- CRITICAL: TRACKING (GTM) – DO NOT MODIFY -->
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-52ZZJVGW');</script>
+  <!-- End Google Tag Manager -->
+
+  <!--
+    ROUTER: Query-parameter variant selector
+    Reads ?v= from the URL and redirects to the matching variant.
+    Default: v0 (control). Valid: v0–v9.
+    Example: index.html?v=v2 → /variants/v2/
+
+    Variant map (Visual / Layout + Structural A/B Test):
+      v0 = Original (control — dark theme baseline)
+      v1 = Small Changes (polished — subtle refinements)
+      v2 = Editorial / Premium (cream, serif, magazine-style, 2-col max)
+      v3 = Bold / Neon (black, gradients, glassmorphism)
+      v4 = Minimal / Light (white, single-column, stripped noise)
+      v5 = Casino-First / Direct (no hero, offers immediately visible)
+      v6 = Horizontal Cards / Comparison (wide rows, review-site layout)
+      v7 = Comparison Table (tabular data, all casinos at once)
+      v8 = Single Casino Focus (full-page #1 pick, minimal secondary list)
+      v9 = Trust-First / Reversed (trust → qualification → then offers)
+  -->
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var v = params.get('v');
+      var valid = ['v0', 'v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8', 'v9'];
+      var target = (v && valid.indexOf(v) !== -1) ? v : 'v0';
+      window.location.replace('./variants/' + target + '/');
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- CRITICAL: TRACKING (GTM) – DO NOT MODIFY -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52ZZJVGW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Fallback for noscript users -->
+  <noscript>
+    <h1>Winning VIPs</h1>
+    <p>JavaScript is required for automatic routing. Choose a page:</p>
+    <ul>
+      <li><a href="./variants/v0/">Main Site (Control)</a></li>
+      <li><a href="./variants/v1/">Variant 1</a></li>
+      <li><a href="./variants/v2/">Variant 2</a></li>
+      <li><a href="./variants/v3/">Variant 3</a></li>
+      <li><a href="./variants/v4/">Variant 4</a></li>
+      <li><a href="./variants/v5/">Variant 5</a></li>
+      <li><a href="./variants/v6/">Variant 6</a></li>
+      <li><a href="./variants/v7/">Variant 7</a></li>
+      <li><a href="./variants/v8/">Variant 8</a></li>
+      <li><a href="./variants/v9/">Variant 9</a></li>
+    </ul>
+  </noscript>
+
+</body>
+</html>
