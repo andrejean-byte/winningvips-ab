@@ -1,4 +1,302 @@
-/* WinningVIPs CRO Optimization Styles */
+/* WinningVIPs CRO Optimization Styles v3
+ * Shared across all 10 A/B variants.
+ * Loaded AFTER inline <style> so these override variant defaults.
+ */
+
+/* ── SPACING TIGHTENING (mobile-first) ─────────────────── */
+.hero {
+  padding: 48px 20px 32px;
+}
+
+.hero::before {
+  width: 400px;
+  height: 400px;
+}
+
+.hero-subtext {
+  margin-bottom: 24px;
+}
+
+.featured-card {
+  padding: 24px;
+  max-width: 440px;
+}
+
+.featured-logo {
+  width: 100px;
+  margin-bottom: 12px;
+}
+
+.featured-badge {
+  margin-bottom: 14px;
+}
+
+.featured-bonus {
+  font-size: 1.35rem;
+}
+
+.featured-bonus-sub {
+  margin-bottom: 16px;
+}
+
+.qualification {
+  padding: 40px 20px;
+}
+
+.qualification-heading {
+  margin-bottom: 20px;
+}
+
+.qual-grid {
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.qual-card {
+  padding: 24px;
+}
+
+.qual-card-title {
+  margin-bottom: 14px;
+}
+
+.cta-section {
+  padding: 40px 20px;
+}
+
+.cta-subheading {
+  margin-bottom: 20px;
+}
+
+.table-section {
+  padding: 40px 20px;
+}
+
+.secondary-section {
+  padding: 40px 20px;
+}
+
+.casino-grid {
+  gap: 12px;
+}
+
+.casino-card {
+  padding: 20px;
+}
+
+.casino-badge {
+  margin-bottom: 8px;
+}
+
+.casino-logo {
+  margin-bottom: 8px;
+}
+
+.casino-name {
+  margin-bottom: 2px;
+}
+
+.casino-rating {
+  margin-bottom: 4px;
+}
+
+.casino-bonus-sub {
+  margin-bottom: 10px;
+}
+
+.casino-features {
+  margin-bottom: 10px;
+  gap: 3px;
+}
+
+.casino-region {
+  margin-bottom: 10px;
+}
+
+.casino-card .btn-cta {
+  padding: 12px 24px;
+  font-size: 0.9rem;
+}
+
+/* Desktop responsive scaling */
+@media (min-width: 768px) {
+  .hero { padding: 56px 20px 36px; }
+  .casino-grid { gap: 16px; }
+  .qual-grid { gap: 16px; }
+}
+
+@media (min-width: 1200px) {
+  .hero { padding: 64px 24px 40px; }
+  .qualification { padding: 48px 20px; }
+  .cta-section { padding: 48px 20px; }
+  .casino-grid { gap: 20px; }
+  .casino-card { padding: 24px; }
+}
+
+/* ── HERO PROOF POINTS ─────────────────────────────────── */
+.wv-proof-points {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 16px;
+  margin-top: 14px;
+  margin-bottom: 20px;
+}
+
+.wv-proof-points span {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #a78bfa;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.wv-proof-points span::before {
+  content: '\2713';
+  color: #22c55e;
+  font-weight: 700;
+}
+
+/* ── TRUST LINE PER CARD ───────────────────────────────── */
+.wv-trust-line {
+  font-size: 0.68rem;
+  color: #7a7a8e;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+/* ── READ REVIEW BUTTON (secondary CTA) ────────────────── */
+.btn-review {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #9999aa;
+  background: transparent;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  cursor: pointer;
+  margin-top: 8px;
+  text-decoration: none;
+  min-height: 44px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.btn-review:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #e2e2e8;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* CTA group wrapper (for grid layouts like v8 secondary rows) */
+.wv-cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  min-width: 120px;
+}
+
+.wv-cta-group .btn-cta {
+  text-align: center;
+}
+
+.wv-cta-group .btn-review {
+  margin-top: 0;
+  font-size: 0.75rem;
+  padding: 6px 16px;
+  min-height: 32px;
+}
+
+/* Table cell context (v7) */
+.table-cta .btn-review {
+  display: inline-block;
+  width: auto;
+  margin-top: 8px;
+  font-size: 0.72rem;
+  padding: 6px 14px;
+  min-height: 32px;
+}
+
+/* v6 horizontal card context */
+.casino-card-right .btn-review {
+  margin-top: 6px;
+  font-size: 0.75rem;
+  padding: 8px 16px;
+  min-height: 36px;
+}
+
+/* ── CARD TERMS LINE ───────────────────────────────────── */
+.card-terms {
+  font-size: 0.6rem;
+  color: #555568;
+  text-align: center;
+  margin-top: 6px;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+/* ── HOW WE RANK SECTION ──────────────────────────────── */
+.wv-how-we-rank {
+  padding: 36px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.wv-hwr-title {
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.wv-hwr-intro {
+  text-align: center;
+  font-size: 0.82rem;
+  color: #9999aa;
+  margin-bottom: 20px;
+}
+
+.wv-hwr-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+  .wv-hwr-grid { grid-template-columns: 1fr; }
+}
+
+.wv-hwr-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.wv-hwr-item strong {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #a78bfa;
+  margin-bottom: 3px;
+}
+
+.wv-hwr-item span {
+  font-size: 0.75rem;
+  color: #9999aa;
+  line-height: 1.5;
+}
 
 /* ── STICKY MOBILE CTA BAR ──────────────────────────────── */
 #wv-sticky-cta {
@@ -11,7 +309,7 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid rgba(124, 58, 237, 0.3);
-  padding: 12px 16px;
+  padding: 10px 16px;
   text-align: center;
   transform: translateY(100%);
   transition: transform 0.3s ease;
@@ -31,54 +329,54 @@
   width: 100%;
   background: #00d4aa;
   color: #0a0a0f;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  padding: 14px 24px;
+  padding: 12px 24px;
   border-radius: 8px;
   text-align: center;
   text-decoration: none;
   border: none;
   cursor: pointer;
+  min-height: 44px;
 }
 
 #wv-sticky-cta .wv-sticky-micro {
   display: block;
-  font-size: 0.7rem;
+  font-size: 0.62rem;
+  color: #9999aa;
+  margin-top: 3px;
+}
+
+/* Footer clearance for sticky bar on mobile */
+@media (max-width: 768px) {
+  .footer { padding-bottom: 88px !important; }
+}
+
+/* ── MICROCOPY BELOW CTAs ──────────────────────────────── */
+.wv-microcopy {
+  font-size: 0.68rem;
   color: #9999aa;
   margin-top: 6px;
-}
-
-/* Add padding to body bottom so sticky bar doesn't cover content on mobile */
-@media (max-width: 768px) {
-  .footer { padding-bottom: 100px !important; }
-}
-
-/* ── MICROCOPY BELOW CTAs ────────────────────────────────── */
-.wv-microcopy {
-  font-size: 0.72rem;
-  color: #9999aa;
-  margin-top: 8px;
   text-align: center;
   letter-spacing: 0.02em;
 }
 
-/* Light theme variants (v2 editorial) */
 body[style*="faf8f5"] .wv-microcopy,
 .wv-faq-item button { font-family: inherit; }
 
-/* ── TRUST STRIP ─────────────────────────────────────────── */
+/* ── TRUST STRIP ──────────────────────────────────────── */
 .wv-trust-strip {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 16px 24px;
-  padding: 16px 0 24px;
-  margin-bottom: 16px;
+  gap: 12px 20px;
+  padding: 12px 0 16px;
+  margin-bottom: 12px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .wv-trust-strip span {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 600;
   color: #a78bfa;
   text-transform: uppercase;
@@ -94,23 +392,23 @@ body[style*="faf8f5"] .wv-microcopy,
   font-weight: 700;
 }
 
-/* ── FAQ ACCORDION ───────────────────────────────────────── */
+/* ── FAQ ACCORDION ─────────────────────────────────────── */
 .wv-faq {
-  padding: 48px 20px 40px;
+  padding: 36px 20px 32px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .wv-faq-title {
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 28px;
+  margin-bottom: 16px;
 }
 
 .wv-faq-item {
   max-width: 720px;
-  margin: 0 auto 12px;
+  margin: 0 auto 8px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 10px;
   overflow: hidden;
@@ -121,15 +419,16 @@ body[style*="faf8f5"] .wv-microcopy,
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 16px 20px;
+  padding: 14px 16px;
   background: rgba(255, 255, 255, 0.03);
   border: none;
   color: #e2e2e8;
-  font-size: 0.92rem;
+  font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
   text-align: left;
   font-family: inherit;
+  min-height: 44px;
 }
 
 .wv-faq-q::after {
@@ -147,13 +446,61 @@ body[style*="faf8f5"] .wv-microcopy,
 }
 
 .wv-faq-a {
-  padding: 0 20px 16px;
-  font-size: 0.85rem;
+  padding: 0 16px 14px;
+  font-size: 0.8rem;
   color: #9999aa;
   line-height: 1.7;
 }
 
 /* ── LIGHT THEME OVERRIDES (v2 editorial, v4 minimal) ──── */
+.wv-light .wv-proof-points span {
+  color: #7c5c3e;
+}
+
+.wv-light .wv-trust-line {
+  color: #8a8a96;
+}
+
+.wv-light .btn-review {
+  border-color: #d0ccc4;
+  color: #6b6b78;
+}
+
+.wv-light .btn-review:hover {
+  border-color: #999;
+  color: #333;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.wv-light .card-terms {
+  color: #aaa;
+}
+
+.wv-light .wv-how-we-rank {
+  border-top-color: #e0dbd3;
+}
+
+.wv-light .wv-hwr-title {
+  color: #1a1a22;
+}
+
+.wv-light .wv-hwr-intro {
+  color: #8a8a96;
+}
+
+.wv-light .wv-hwr-item {
+  background: #fff;
+  border-color: #e0dbd3;
+}
+
+.wv-light .wv-hwr-item strong {
+  color: #7c5c3e;
+}
+
+.wv-light .wv-hwr-item span {
+  color: #555562;
+}
+
 .wv-light #wv-sticky-cta {
   background: rgba(250, 248, 245, 0.97);
   border-top: 1px solid #e0dbd3;
