@@ -1,0 +1,207 @@
+/* WinningVIPs CRO Optimization Styles */
+
+/* ── STICKY MOBILE CTA BAR ──────────────────────────────── */
+#wv-sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9990;
+  background: rgba(10, 10, 15, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(124, 58, 237, 0.3);
+  padding: 12px 16px;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #wv-sticky-cta { display: block; }
+}
+
+#wv-sticky-cta.wv-sticky-show {
+  transform: translateY(0);
+}
+
+#wv-sticky-cta .btn-cta {
+  display: block;
+  width: 100%;
+  background: #00d4aa;
+  color: #0a0a0f;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 14px 24px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+#wv-sticky-cta .wv-sticky-micro {
+  display: block;
+  font-size: 0.7rem;
+  color: #9999aa;
+  margin-top: 6px;
+}
+
+/* Add padding to body bottom so sticky bar doesn't cover content on mobile */
+@media (max-width: 768px) {
+  .footer { padding-bottom: 100px !important; }
+}
+
+/* ── MICROCOPY BELOW CTAs ────────────────────────────────── */
+.wv-microcopy {
+  font-size: 0.72rem;
+  color: #9999aa;
+  margin-top: 8px;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+/* Light theme variants (v2 editorial) */
+body[style*="faf8f5"] .wv-microcopy,
+.wv-faq-item button { font-family: inherit; }
+
+/* ── TRUST STRIP ─────────────────────────────────────────── */
+.wv-trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 24px;
+  padding: 16px 0 24px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.wv-trust-strip span {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #a78bfa;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.wv-trust-strip span::before {
+  content: '\2713';
+  color: #22c55e;
+  font-weight: 700;
+}
+
+/* ── FAQ ACCORDION ───────────────────────────────────────── */
+.wv-faq {
+  padding: 48px 20px 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.wv-faq-title {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 28px;
+}
+
+.wv-faq-item {
+  max-width: 720px;
+  margin: 0 auto 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.wv-faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: none;
+  color: #e2e2e8;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.wv-faq-q::after {
+  content: '+';
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #a78bfa;
+  flex-shrink: 0;
+  margin-left: 12px;
+  transition: transform 0.2s;
+}
+
+.wv-faq-q[aria-expanded="true"]::after {
+  content: '\2212';
+}
+
+.wv-faq-a {
+  padding: 0 20px 16px;
+  font-size: 0.85rem;
+  color: #9999aa;
+  line-height: 1.7;
+}
+
+/* ── LIGHT THEME OVERRIDES (v2 editorial, v4 minimal) ──── */
+.wv-light #wv-sticky-cta {
+  background: rgba(250, 248, 245, 0.97);
+  border-top: 1px solid #e0dbd3;
+}
+
+.wv-light #wv-sticky-cta .btn-cta {
+  background: #1a1a22;
+  color: #faf8f5;
+}
+
+.wv-light #wv-sticky-cta .wv-sticky-micro {
+  color: #8a8a96;
+}
+
+.wv-light .wv-microcopy {
+  color: #8a8a96;
+}
+
+.wv-light .wv-trust-strip {
+  border-bottom-color: #e0dbd3;
+}
+
+.wv-light .wv-trust-strip span {
+  color: #7c5c3e;
+}
+
+.wv-light .wv-faq {
+  border-top-color: #e0dbd3;
+}
+
+.wv-light .wv-faq-title {
+  color: #1a1a22;
+}
+
+.wv-light .wv-faq-item {
+  border-color: #e0dbd3;
+  background: #fff;
+}
+
+.wv-light .wv-faq-q {
+  background: #faf8f5;
+  color: #1a1a22;
+}
+
+.wv-light .wv-faq-q::after {
+  color: #7c5c3e;
+}
+
+.wv-light .wv-faq-a {
+  color: #555562;
+}
