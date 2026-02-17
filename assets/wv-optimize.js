@@ -1,7 +1,10 @@
 /**
- * WinningVIPs — CRO Tracking + UX Optimization
+ * WinningVIPs — CRO Tracking + UX Optimization v2
  * Injected into every variant page.
  * DOES NOT modify CTA destination URLs.
+ *
+ * Tracking: dataLayer (GTM), Meta Pixel (fbq), sendBeacon, GA4 gtag
+ * Bot defense: isTrusted check, nonce, UA heuristic, rate-limit (client-side)
  */
 (function () {
   'use strict';
@@ -9,12 +12,65 @@
   var VARIANT = localStorage.getItem('wv-variant') || 'unknown';
   var PAGE_PATH = location.pathname;
 
-  // ── 1. TRACKING ─────────────────────────────────────────────
+  // ── 0. OFFER MAP (canonical mapping — prevents mis-labeling) ──
+  var OFFER_MAP = {
+    'A9t2XfP4': { key: 'neospin',       name: 'NeoSpin' },
+    'Z4rW8pK2': { key: 'golden-crown',  name: 'Golden Crown' },
+    'q7N5bD1L': { key: 'luckyvibe',     name: 'LuckyVibe' },
+    'H6yG2aS7': { key: 'skycrown',      name: 'SkyCrown' },
+    'm9E1jR4t': { key: 'wild-tokyo',    name: 'Wild Tokyo' }
+  };
+
+  function resolveOffer(href) {
+    if (!href) return { key: 'unknown', name: 'unknown' };
+    for (var slug in OFFER_MAP) {
+      if (OFFER_MAP.hasOwnProperty(slug) && href.indexOf(slug) !== -1) {
+        return OFFER_MAP[slug];
+      }
+    }
+    return { key: 'unknown', name: 'unknown' };
+  }
+
+  // ── 0b. BOT / PREFETCH DETECTION ──────────────────────────────
+  function isLikelyBot() {
+    var ua = navigator.userAgent || '';
+    if (/bot|crawl|spider|slurp|facebookexternalhit|Bytespider|GPTBot|Googlebot|bingbot|yandex|baidu|semrush|ahref|mj12|dotbot|screaming|prerender|headless|phantom|puppeteer|lighthouse/i.test(ua)) return true;
+    if (navigator.webdriver) return true;
+    if (window.__nightmare) return true;
+    return false;
+  }
+
+  var IS_BOT = isLikelyBot();
+
+  // Client-side rate limit: max 3 clicks per offer per 60s
+  var clickLog = {}; // { offerKey: [timestamp, ...] }
+  function isRateLimited(offerKey) {
+    var now = Date.now();
+    var window60 = 60000;
+    if (!clickLog[offerKey]) clickLog[offerKey] = [];
+    clickLog[offerKey] = clickLog[offerKey].filter(function (t) { return now - t < window60; });
+    if (clickLog[offerKey].length >= 3) return true;
+    clickLog[offerKey].push(now);
+    return false;
+  }
+
+  // Short-lived nonce: proves JS executed (bots hitting /track-click directly won't have it)
+  var NONCE = Math.random().toString(36).substring(2, 10) + Date.now().toString(36);
+
+  // ── 1. TRACKING ENGINE ────────────────────────────────────────
   window.dataLayer = window.dataLayer || [];
 
+  function genEventId() {
+    return 'wv-' + Date.now() + '-' + Math.random().toString(36).substring(2, 9);
+  }
+
   function pushEvent(eventName, extra) {
+    if (IS_BOT) return; // drop bot events entirely
+
+    var eventId = genEventId();
     var payload = {
       event: eventName,
+      event_id: eventId,
       variant: VARIANT,
       page_path: PAGE_PATH,
       timestamp: new Date().toISOString()
@@ -24,11 +80,42 @@
         if (extra.hasOwnProperty(k)) payload[k] = extra[k];
       }
     }
+
+    // 1. GTM dataLayer
     window.dataLayer.push(payload);
 
-    // Fire-and-forget beacon (no navigation blocking)
+    // 2. Meta Pixel (if loaded via GTM or otherwise)
+    if (eventName === 'cta_click' && typeof fbq === 'function') {
+      try {
+        fbq('trackCustom', 'OutboundClick', {
+          event_id: eventId,
+          offer_key: extra.offer_key || '',
+          offer_name: extra.offer_name || '',
+          variant: VARIANT,
+          destination_domain: 'betncrypt.com',
+          page_path: PAGE_PATH
+        }, { eventID: eventId });
+      } catch (e) { /* silent */ }
+    }
+
+    // 3. GA4 gtag (if loaded via GTM or otherwise)
+    if (typeof gtag === 'function') {
+      try {
+        gtag('event', eventName, {
+          event_id: eventId,
+          variant: VARIANT,
+          offer_key: extra.offer_key || '',
+          offer_name: extra.offer_name || '',
+          page_path: PAGE_PATH
+        });
+      } catch (e) { /* silent */ }
+    }
+
+    // 4. Fire-and-forget beacon to /track-click (if Worker exists)
     var qs = 'variant=' + encodeURIComponent(VARIANT) +
              '&event=' + encodeURIComponent(eventName) +
+             '&event_id=' + encodeURIComponent(eventId) +
+             '&nonce=' + encodeURIComponent(NONCE) +
              '&page=' + encodeURIComponent(PAGE_PATH) +
              '&ts=' + encodeURIComponent(payload.timestamp);
     if (extra) {
@@ -44,23 +131,45 @@
     }
   }
 
-  // 1a. CTA Click Tracking
+  // ── 1a. CTA Click Tracking (with offer resolution + bot/rate guard) ──
   document.addEventListener('click', function (e) {
-    var link = e.target.closest('a.btn-cta, a.mega-cta, [data-cta]');
+    // Only count human-initiated clicks
+    if (!e.isTrusted) return;
+
+    var link = e.target.closest('a.btn-cta, a.mega-cta');
     if (!link) return;
-    var ctaId = link.getAttribute('data-cta') ||
-                link.closest('.casino-card, .featured-card, .mega-hero')?.querySelector('.casino-name, .mega-hero-name')?.textContent?.trim() ||
-                'hero-cta';
-    pushEvent('cta_click', { cta_id: ctaId, cta_url: link.href });
+
+    var href = link.href || '';
+    var offer = resolveOffer(href);
+
+    // Rate-limit per offer
+    if (isRateLimited(offer.key)) return;
+
+    // Resolve CTA position for attribution
+    var ctaPosition = 'grid';
+    if (link.closest('.featured-card')) ctaPosition = 'hero-featured';
+    else if (link.closest('.mega-hero')) ctaPosition = 'mega-hero';
+    else if (link.closest('#wv-sticky-cta')) ctaPosition = 'sticky-bar';
+    else if (link.closest('table')) ctaPosition = 'comparison-table';
+
+    pushEvent('cta_click', {
+      offer_key: offer.key,
+      offer_name: offer.name,
+      cta_id: offer.key, // backwards compat with existing GTM triggers
+      cta_url: href,
+      cta_position: ctaPosition,
+      device: window.innerWidth <= 768 ? 'mobile' : 'desktop'
+    });
   }, true); // capture phase — fires before navigation
 
-  // 1b. Form Submit Tracking (if any forms exist)
+  // ── 1b. Form Submit Tracking ──────────────────────────────────
   document.addEventListener('submit', function (e) {
+    if (!e.isTrusted) return;
     var form = e.target;
     pushEvent('form_submit', { form_id: form.id || form.action || 'unknown-form' });
   }, true);
 
-  // 1c. Scroll Depth Tracking
+  // ── 1c. Scroll Depth Tracking ────────────────────────────────
   var scrollMarks = { 25: false, 50: false, 75: false };
   var scrollTick = false;
   window.addEventListener('scroll', function () {
@@ -80,7 +189,7 @@
     });
   }, { passive: true });
 
-  // 1d. Time to First Interaction
+  // ── 1d. Time to First Interaction ─────────────────────────────
   var firstInteractionFired = false;
   ['click', 'scroll', 'keydown', 'touchstart'].forEach(function (evt) {
     document.addEventListener(evt, function () {
@@ -92,18 +201,21 @@
     }, { once: true, passive: true });
   });
 
-  // ── 2. DATA-CTA ATTRIBUTES ─────────────────────────────────
-  // Label every CTA with a data-cta attribute for tracking
-  document.querySelectorAll('.btn-cta, .mega-cta').forEach(function (el, i) {
-    if (!el.getAttribute('data-cta')) {
-      var card = el.closest('.casino-card, .featured-card, .mega-hero');
-      var name = card && (card.querySelector('.casino-name') || card.querySelector('.mega-hero-name'));
-      el.setAttribute('data-cta', name ? name.textContent.trim() : 'cta-' + i);
-    }
+  // ── 1e. Meta Pixel PageView (ensure it fires on variant pages) ──
+  if (typeof fbq === 'function') {
+    try { fbq('track', 'PageView'); } catch (e) { /* silent */ }
+  }
+
+  // ── 2. DATA-CTA ATTRIBUTES (fixed: URL-based offer resolution) ──
+  document.querySelectorAll('.btn-cta, .mega-cta').forEach(function (el) {
+    if (el.getAttribute('data-cta')) return; // already set (e.g. sticky bar)
+    var href = el.getAttribute('href') || '';
+    var offer = resolveOffer(href);
+    el.setAttribute('data-cta', offer.key);
+    el.setAttribute('data-offer', offer.name);
   });
 
-  // ── 3. STICKY MOBILE CTA BAR ───────────────────────────────
-  // Find the primary CTA URL (first .btn-cta or .mega-cta on page)
+  // ── 3. STICKY MOBILE CTA BAR ─────────────────────────────────
   var primaryCta = document.querySelector('.featured-card .btn-cta, .mega-cta, .casino-card .btn-cta');
   if (primaryCta) {
     var stickyBar = document.createElement('div');
@@ -115,7 +227,6 @@
       '<span class="wv-sticky-micro">Our #1 pick &middot; Free to join</span>';
     document.body.appendChild(stickyBar);
 
-    // Show/hide on scroll (only on mobile)
     var stickyVisible = false;
     window.addEventListener('scroll', function () {
       if (window.innerWidth > 768) {
@@ -130,7 +241,7 @@
     }, { passive: true });
   }
 
-  // ── 4. FAQ ACCORDION ────────────────────────────────────────
+  // ── 4. FAQ ACCORDION ──────────────────────────────────────────
   var footer = document.querySelector('.footer');
   if (footer) {
     var faqSection = document.createElement('section');
@@ -153,7 +264,6 @@
       '</div>';
     footer.parentNode.insertBefore(faqSection, footer);
 
-    // Accordion toggle
     faqSection.addEventListener('click', function (e) {
       var btn = e.target.closest('.wv-faq-q');
       if (!btn) return;
@@ -165,7 +275,7 @@
     });
   }
 
-  // ── 5. MICROCOPY NEAR CTAs ──────────────────────────────────
+  // ── 5. MICROCOPY NEAR CTAs ────────────────────────────────────
   document.querySelectorAll('.casino-card .btn-cta, .featured-card .btn-cta, .mega-cta').forEach(function (cta) {
     if (cta.parentNode.querySelector('.wv-microcopy')) return;
     var micro = document.createElement('div');
@@ -174,7 +284,7 @@
     cta.parentNode.insertBefore(micro, cta.nextSibling);
   });
 
-  // ── 6. TRUST BADGES NEAR CTA SECTION ───────────────────────
+  // ── 6. TRUST BADGES NEAR CTA SECTION ──────────────────────────
   var ctaSection = document.querySelector('.cta-section, .mega-hero');
   if (ctaSection) {
     var trustStrip = document.createElement('div');
