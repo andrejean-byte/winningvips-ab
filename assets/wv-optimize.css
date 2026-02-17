@@ -1,9 +1,17 @@
-/* WinningVIPs CRO Optimization Styles v3
+/* WinningVIPs CRO Optimization Styles v4
  * Shared across all 10 A/B variants.
  * Loaded AFTER inline <style> so these override variant defaults.
+ *
+ * Changes from v3:
+ * - Removed: .wv-trust-line, .wv-proof-points, .wv-trust-strip, .wv-microcopy (clutter)
+ * - Added: v8 mega-hero/mega-card mobile fixes
+ * - Added: all variant-specific selectors for spacing
+ * - Simplified: card CTA area = CTA + Review + Terms only
  */
 
 /* ── SPACING TIGHTENING (mobile-first) ─────────────────── */
+
+/* Standard hero (v0,v1,v2,v3,v4) */
 .hero {
   padding: 48px 20px 32px;
 }
@@ -17,6 +25,33 @@
   margin-bottom: 24px;
 }
 
+/* v8 mega-hero */
+.mega-hero {
+  padding: 48px 20px 32px;
+}
+
+.mega-hero-sub {
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+/* v5 intro-banner */
+.intro-banner {
+  padding: 36px 20px;
+}
+
+/* v9 trust-hero */
+.trust-hero {
+  padding: 48px 20px 36px;
+}
+
+.trust-hero-sub {
+  margin-bottom: 28px;
+}
+
+/* v7 hero (already compact, minor tighten) */
+
+/* ── FEATURED CARD ──────────────────────────────────────── */
 .featured-card {
   padding: 24px;
   max-width: 440px;
@@ -39,6 +74,70 @@
   margin-bottom: 16px;
 }
 
+/* ── V8 MEGA CARD (mobile fix) ──────────────────────────── */
+.mega-card {
+  padding: 28px 20px;
+  max-width: 440px;
+  border-radius: 18px;
+}
+
+.mega-card-logo {
+  width: 100px;
+  margin-bottom: 14px;
+}
+
+.mega-card-name {
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.mega-card-rating {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.mega-card-bonus {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+.mega-card-bonus-sub {
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
+
+.mega-card-features {
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.mega-card-features li {
+  font-size: 0.78rem;
+  padding: 4px 10px;
+}
+
+.mega-card-region {
+  font-size: 0.75rem;
+  margin-bottom: 18px;
+}
+
+.mega-cta {
+  font-size: 1rem;
+  padding: 14px 20px;
+  border-radius: 10px;
+}
+
+.mega-trust {
+  margin-top: 24px;
+  gap: 16px;
+}
+
+.mega-trust-item {
+  font-size: 0.72rem;
+}
+
+/* ── QUALIFICATION ──────────────────────────────────────── */
 .qualification {
   padding: 40px 20px;
 }
@@ -60,6 +159,7 @@
   margin-bottom: 14px;
 }
 
+/* ── CTA / CASINO SECTIONS ──────────────────────────────── */
 .cta-section {
   padding: 40px 20px;
 }
@@ -68,14 +168,22 @@
   margin-bottom: 20px;
 }
 
+/* v7 table section */
 .table-section {
   padding: 40px 20px;
 }
 
+/* v8 secondary section */
 .secondary-section {
   padding: 40px 20px;
 }
 
+/* v9 transition text */
+.transition-text {
+  padding: 32px 20px;
+}
+
+/* ── CASINO GRID ────────────────────────────────────────── */
 .casino-grid {
   gap: 12px;
 }
@@ -118,55 +226,26 @@
   font-size: 0.9rem;
 }
 
-/* Desktop responsive scaling */
-@media (min-width: 768px) {
-  .hero { padding: 56px 20px 36px; }
-  .casino-grid { gap: 16px; }
-  .qual-grid { gap: 16px; }
+/* ── V8 SECONDARY ROWS ─────────────────────────────────── */
+.secondary-list {
+  gap: 10px;
 }
 
-@media (min-width: 1200px) {
-  .hero { padding: 64px 24px 40px; }
-  .qualification { padding: 48px 20px; }
-  .cta-section { padding: 48px 20px; }
-  .casino-grid { gap: 20px; }
-  .casino-card { padding: 24px; }
+.secondary-row {
+  padding: 14px 16px;
+  gap: 12px;
 }
 
-/* ── HERO PROOF POINTS ─────────────────────────────────── */
-.wv-proof-points {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px 16px;
-  margin-top: 14px;
-  margin-bottom: 20px;
+@media (max-width: 549px) {
+  .secondary-row {
+    padding: 16px;
+    gap: 10px;
+  }
 }
 
-.wv-proof-points span {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: #a78bfa;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.wv-proof-points span::before {
-  content: '\2713';
-  color: #22c55e;
-  font-weight: 700;
-}
-
-/* ── TRUST LINE PER CARD ───────────────────────────────── */
-.wv-trust-line {
-  font-size: 0.68rem;
-  color: #7a7a8e;
-  margin-bottom: 8px;
-  letter-spacing: 0.02em;
-  text-align: center;
+.secondary-row .btn-cta {
+  padding: 10px 20px;
+  font-size: 0.8rem;
 }
 
 /* ── READ REVIEW BUTTON (secondary CTA) ────────────────── */
@@ -196,7 +275,7 @@
   background: rgba(255, 255, 255, 0.03);
 }
 
-/* CTA group wrapper (for grid layouts like v8 secondary rows) */
+/* CTA group wrapper (for v8 secondary rows) */
 .wv-cta-group {
   display: flex;
   flex-direction: column;
@@ -234,6 +313,12 @@
   min-height: 36px;
 }
 
+/* v8 mega card - review button below mega CTA */
+.mega-card .btn-review {
+  margin-top: 10px;
+  font-size: 0.82rem;
+}
+
 /* ── CARD TERMS LINE ───────────────────────────────────── */
 .card-terms {
   font-size: 0.6rem;
@@ -242,6 +327,31 @@
   margin-top: 6px;
   line-height: 1.4;
   letter-spacing: 0.01em;
+}
+
+/* ── DESKTOP RESPONSIVE SCALING ─────────────────────────── */
+@media (min-width: 768px) {
+  .hero { padding: 56px 20px 36px; }
+  .mega-hero { padding: 56px 20px 36px; }
+  .casino-grid { gap: 16px; }
+  .qual-grid { gap: 16px; }
+  .mega-card { padding: 36px 32px; max-width: 500px; }
+  .mega-card-bonus { font-size: 1.8rem; }
+  .mega-cta { font-size: 1.1rem; padding: 18px 24px; }
+}
+
+@media (min-width: 1200px) {
+  .hero { padding: 64px 24px 40px; }
+  .mega-hero { padding: 64px 24px 40px; }
+  .qualification { padding: 48px 20px; }
+  .cta-section { padding: 48px 20px; }
+  .casino-grid { gap: 20px; }
+  .casino-card { padding: 24px; }
+  .mega-card { padding: 48px 40px; max-width: 520px; }
+  .mega-card-logo { width: 140px; }
+  .mega-card-name { font-size: 1.6rem; }
+  .mega-card-bonus { font-size: 2.2rem; }
+  .mega-cta { font-size: 1.2rem; padding: 20px; }
 }
 
 /* ── HOW WE RANK SECTION ──────────────────────────────── */
@@ -352,46 +462,6 @@
   .footer { padding-bottom: 88px !important; }
 }
 
-/* ── MICROCOPY BELOW CTAs ──────────────────────────────── */
-.wv-microcopy {
-  font-size: 0.68rem;
-  color: #9999aa;
-  margin-top: 6px;
-  text-align: center;
-  letter-spacing: 0.02em;
-}
-
-body[style*="faf8f5"] .wv-microcopy,
-.wv-faq-item button { font-family: inherit; }
-
-/* ── TRUST STRIP ──────────────────────────────────────── */
-.wv-trust-strip {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px 20px;
-  padding: 12px 0 16px;
-  margin-bottom: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.wv-trust-strip span {
-  font-size: 0.68rem;
-  font-weight: 600;
-  color: #a78bfa;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.wv-trust-strip span::before {
-  content: '\2713';
-  color: #22c55e;
-  font-weight: 700;
-}
-
 /* ── FAQ ACCORDION ─────────────────────────────────────── */
 .wv-faq {
   padding: 36px 20px 32px;
@@ -452,15 +522,7 @@ body[style*="faf8f5"] .wv-microcopy,
   line-height: 1.7;
 }
 
-/* ── LIGHT THEME OVERRIDES (v2 editorial, v4 minimal) ──── */
-.wv-light .wv-proof-points span {
-  color: #7c5c3e;
-}
-
-.wv-light .wv-trust-line {
-  color: #8a8a96;
-}
-
+/* ── LIGHT THEME OVERRIDES (v2 editorial, v4 minimal, v6 comparison) ── */
 .wv-light .btn-review {
   border-color: #d0ccc4;
   color: #6b6b78;
@@ -515,18 +577,6 @@ body[style*="faf8f5"] .wv-microcopy,
   color: #8a8a96;
 }
 
-.wv-light .wv-microcopy {
-  color: #8a8a96;
-}
-
-.wv-light .wv-trust-strip {
-  border-bottom-color: #e0dbd3;
-}
-
-.wv-light .wv-trust-strip span {
-  color: #7c5c3e;
-}
-
 .wv-light .wv-faq {
   border-top-color: #e0dbd3;
 }
@@ -552,3 +602,18 @@ body[style*="faf8f5"] .wv-microcopy,
 .wv-light .wv-faq-a {
   color: #555562;
 }
+
+/* v6 (light but not .wv-light) - match its color scheme */
+body[style*="f4f6f9"] .btn-review,
+.casino-card-right .btn-review {
+  border-color: #d1d5db;
+  color: #6b7280;
+}
+
+body[style*="f4f6f9"] .wv-hwr-item,
+.hero + .cta-section .wv-hwr-item {
+  /* handled by light variant detection in JS */
+}
+
+/* FAQ button font fix */
+.wv-faq-item button { font-family: inherit; }

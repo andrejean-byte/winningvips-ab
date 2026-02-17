@@ -1,11 +1,19 @@
 /**
- * WinningVIPs — CRO Tracking + UX Optimization v3
+ * WinningVIPs — CRO Tracking + UX Optimization v4
  * Injected into every variant page.
  * DOES NOT modify CTA destination URLs.
  *
+ * v4 changes from v3:
+ * - REMOVED: trust-line-per-card (section 3) — cluttered cards
+ * - REMOVED: microcopy-per-card (section 5) — cluttered cards
+ * - REMOVED: trust strip injection (section 9) — redundant with hero trust
+ * - REMOVED: proof points injection (section 10) — redundant, broke v8
+ * - KEPT: review buttons + terms (section 6)
+ * - KEPT: How We Rank (section 7), FAQ (section 8), sticky CTA (section 4)
+ * - KEPT: ALL tracking (sections 1-1f) — unchanged
+ *
  * Tracking: dataLayer (GTM), Meta Pixel (fbq), sendBeacon, GA4 gtag
  * Bot defense: isTrusted check, nonce, UA heuristic, rate-limit (client-side)
- * UX: sticky CTA, FAQ, microcopy, trust strip, review buttons, how-we-rank
  */
 (function () {
   'use strict';
@@ -255,17 +263,7 @@
     el.setAttribute('data-offer', offer.name);
   });
 
-  // ── 3. TRUST LINE PER CARD ───────────────────────────────────
-  document.querySelectorAll('.casino-rating, .featured-rating, .mega-card-rating, .mobile-card-rating').forEach(function (rating) {
-    var parent = rating.parentNode;
-    if (!parent || parent.querySelector('.wv-trust-line')) return;
-    var tl = document.createElement('div');
-    tl.className = 'wv-trust-line';
-    tl.textContent = 'Licensed \u00B7 Verified payouts \u00B7 18+';
-    parent.insertBefore(tl, rating.nextSibling);
-  });
-
-  // ── 4. STICKY MOBILE CTA BAR ─────────────────────────────────
+  // ── 3. STICKY MOBILE CTA BAR ─────────────────────────────────
   var primaryCta = document.querySelector('.featured-card .btn-cta, .mega-cta, .casino-card .btn-cta');
   if (primaryCta) {
     var stickyBar = document.createElement('div');
@@ -291,16 +289,7 @@
     }, { passive: true });
   }
 
-  // ── 5. MICROCOPY NEAR CTAs ───────────────────────────────────
-  document.querySelectorAll('.casino-card .btn-cta, .featured-card .btn-cta, .mega-cta').forEach(function (cta) {
-    if (cta.parentNode.querySelector('.wv-microcopy')) return;
-    var micro = document.createElement('div');
-    micro.className = 'wv-microcopy';
-    micro.textContent = 'Free to join \u00B7 No promo code needed';
-    cta.parentNode.insertBefore(micro, cta.nextSibling);
-  });
-
-  // ── 6. READ REVIEW BUTTONS + TERMS LINE ──────────────────────
+  // ── 4. READ REVIEW BUTTONS + TERMS LINE ──────────────────────
   document.querySelectorAll('a.btn-cta, a.mega-cta').forEach(function (cta) {
     // Skip sticky bar CTA
     if (cta.closest('#wv-sticky-cta')) return;
@@ -329,18 +318,13 @@
       wrapper.appendChild(reviewLink);
       wrapper.appendChild(terms);
     } else {
-      // Normal insertion: after microcopy if present, else after CTA
-      var insertAfterEl = cta;
-      var sibling = cta.nextElementSibling;
-      if (sibling && sibling.classList && sibling.classList.contains('wv-microcopy')) {
-        insertAfterEl = sibling;
-      }
-      insertAfterEl.parentNode.insertBefore(reviewLink, insertAfterEl.nextSibling);
+      // Normal insertion: after CTA
+      cta.parentNode.insertBefore(reviewLink, cta.nextSibling);
       reviewLink.parentNode.insertBefore(terms, reviewLink.nextSibling);
     }
   });
 
-  // ── 7. HOW WE RANK SECTION ───────────────────────────────────
+  // ── 5. HOW WE RANK SECTION ───────────────────────────────────
   var qualSection = document.querySelector('.qualification');
   var hwrTarget = qualSection || document.querySelector('.footer');
   if (hwrTarget && !document.querySelector('.wv-how-we-rank')) {
@@ -360,7 +344,7 @@
     hwrTarget.parentNode.insertBefore(hwr, hwrTarget);
   }
 
-  // ── 8. FAQ ACCORDION ─────────────────────────────────────────
+  // ── 6. FAQ ACCORDION ─────────────────────────────────────────
   var footer = document.querySelector('.footer');
   if (footer && !document.querySelector('.wv-faq')) {
     var faqSection = document.createElement('section');
@@ -396,33 +380,6 @@
       answer.hidden = expanded;
       pushEvent('faq_toggle', { question: btn.textContent.trim() });
     });
-  }
-
-  // ── 9. TRUST STRIP ──────────────────────────────────────────
-  var ctaSection = document.querySelector('.cta-section, .mega-hero');
-  if (ctaSection) {
-    var trustStrip = document.createElement('div');
-    trustStrip.className = 'wv-trust-strip';
-    trustStrip.innerHTML =
-      '<span>Licensed & Regulated</span>' +
-      '<span>Verified Payouts</span>' +
-      '<span>Responsible Gambling 18+</span>' +
-      '<span>Secure & Encrypted</span>';
-    var ctaContainer = ctaSection.querySelector('.container') || ctaSection;
-    ctaContainer.insertBefore(trustStrip, ctaContainer.firstChild);
-  }
-
-  // ── 10. HERO PROOF POINTS ────────────────────────────────────
-  // Only inject if the variant doesn't already have inline trust badges
-  var heroSubtext = document.querySelector('.hero-subtext, .mega-hero-sub, .intro-banner p');
-  if (heroSubtext && !document.querySelector('.wv-proof-points, .trust-bar, .trust-inline')) {
-    var pp = document.createElement('div');
-    pp.className = 'wv-proof-points';
-    pp.innerHTML =
-      '<span>Licensed & Verified</span>' +
-      '<span>Published Bonus Terms</span>' +
-      '<span>Updated Feb 2026</span>';
-    heroSubtext.parentNode.insertBefore(pp, heroSubtext.nextSibling);
   }
 
 })();
