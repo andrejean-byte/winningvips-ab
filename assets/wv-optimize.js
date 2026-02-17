@@ -1,15 +1,14 @@
 /**
- * WinningVIPs — CRO Tracking + UX Optimization v4
+ * WinningVIPs — CRO Tracking + UX Optimization v5
  * Injected into every variant page.
  * DOES NOT modify CTA destination URLs.
  *
- * v4 changes from v3:
- * - REMOVED: trust-line-per-card (section 3) — cluttered cards
- * - REMOVED: microcopy-per-card (section 5) — cluttered cards
- * - REMOVED: trust strip injection (section 9) — redundant with hero trust
- * - REMOVED: proof points injection (section 10) — redundant, broke v8
- * - KEPT: review buttons + terms (section 6)
- * - KEPT: How We Rank (section 7), FAQ (section 8), sticky CTA (section 4)
+ * v5 changes from v4:
+ * - ADDED: Header enhancement with nav links + trust indicator (section 7)
+ * - ADDED: Responsible gambling block injected before footer (section 8)
+ * - ADDED: Payment/licensing trust block between How We Rank and FAQ (section 9)
+ * - KEPT: review buttons + terms (section 4)
+ * - KEPT: How We Rank (section 5), FAQ (section 6), sticky CTA (section 3)
  * - KEPT: ALL tracking (sections 1-1f) — unchanged
  *
  * Tracking: dataLayer (GTM), Meta Pixel (fbq), sendBeacon, GA4 gtag
@@ -380,6 +379,98 @@
       answer.hidden = expanded;
       pushEvent('faq_toggle', { question: btn.textContent.trim() });
     });
+  }
+
+  // ── 7. HEADER ENHANCEMENT ─────────────────────────────────
+  var headerContainer = document.querySelector('.header .container');
+  if (headerContainer && !document.querySelector('.wv-header-nav')) {
+    // Add anchor IDs for in-page nav
+    var hwrSection = document.querySelector('.wv-how-we-rank');
+    if (hwrSection) hwrSection.id = 'wv-how-we-rank-anchor';
+    var faqSec = document.querySelector('.wv-faq');
+    if (faqSec) faqSec.id = 'wv-faq-anchor';
+
+    // Desktop inline nav
+    var nav = document.createElement('nav');
+    nav.className = 'wv-header-nav';
+    nav.setAttribute('aria-label', 'Page navigation');
+    nav.innerHTML =
+      '<a href="#wv-how-we-rank-anchor">How We Rank</a>' +
+      '<a href="#wv-faq-anchor">FAQ</a>' +
+      '<a href="../../pages/responsible-gambling.html">Responsible Gaming</a>' +
+      '<span class="wv-header-trust">Licensed \u00B7 21+ \u00B7 Updated Feb 2026</span>';
+    headerContainer.appendChild(nav);
+
+    // Mobile hamburger toggle
+    var toggle = document.createElement('button');
+    toggle.className = 'wv-header-toggle';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Toggle navigation');
+    toggle.innerHTML = '<span></span><span></span><span></span>';
+    headerContainer.appendChild(toggle);
+
+    // Mobile nav panel (inserted after header)
+    var header = document.querySelector('.header');
+    var mobileNav = document.createElement('nav');
+    mobileNav.className = 'wv-header-mobile-nav';
+    mobileNav.setAttribute('aria-label', 'Mobile navigation');
+    mobileNav.innerHTML =
+      '<a href="#wv-how-we-rank-anchor">How We Rank</a>' +
+      '<a href="#wv-faq-anchor">FAQ</a>' +
+      '<a href="../../pages/responsible-gambling.html">Responsible Gaming</a>';
+    header.parentNode.insertBefore(mobileNav, header.nextSibling);
+
+    toggle.addEventListener('click', function () {
+      var expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      mobileNav.classList.toggle('wv-open', !expanded);
+    });
+
+    // Close mobile nav on link click
+    mobileNav.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        toggle.setAttribute('aria-expanded', 'false');
+        mobileNav.classList.remove('wv-open');
+      }
+    });
+  }
+
+  // ── 8. RESPONSIBLE GAMBLING BLOCK ─────────────────────────
+  var footerEl = document.querySelector('.footer');
+  if (footerEl && !document.querySelector('.wv-rg-block')) {
+    var rgBlock = document.createElement('div');
+    rgBlock.className = 'wv-rg-block';
+    rgBlock.innerHTML =
+      '<div class="wv-rg-badges">' +
+        '<span>18+</span>' +
+        '<span>Gamble Responsibly</span>' +
+        '<span>BeGambleAware</span>' +
+      '</div>' +
+      '<p class="wv-rg-text">' +
+        'Gambling can be addictive. Please play responsibly and only gamble with money you can afford to lose. ' +
+        'If you need help, contact <a href="https://www.begambleaware.org" target="_blank" rel="noopener">BeGambleAware.org</a> ' +
+        'or call 1-800-GAMBLER.' +
+      '</p>';
+    footerEl.parentNode.insertBefore(rgBlock, footerEl);
+  }
+
+  // ── 9. PAYMENT / LICENSING TRUST BLOCK ────────────────────
+  var hwrEl = document.querySelector('.wv-how-we-rank');
+  var faqEl = document.querySelector('.wv-faq');
+  var trustTarget = faqEl || document.querySelector('.footer');
+  if (trustTarget && !document.querySelector('.wv-trust-block')) {
+    var trustBlock = document.createElement('div');
+    trustBlock.className = 'wv-trust-block';
+    trustBlock.innerHTML =
+      '<div class="wv-trust-block-title">Accepted Payments &amp; Licensing</div>' +
+      '<div class="wv-trust-block-row">' +
+        '<span class="wv-trust-block-item">\uD83D\uDCB3 Visa / Mastercard</span>' +
+        '<span class="wv-trust-block-item">\u20BF Bitcoin</span>' +
+        '<span class="wv-trust-block-item">\u26A1 Instant Crypto</span>' +
+        '<span class="wv-trust-block-item">\uD83C\uDFE6 Bank Transfer</span>' +
+        '<span class="wv-trust-block-item">\uD83D\uDD12 Curacao Licensed</span>' +
+      '</div>';
+    trustTarget.parentNode.insertBefore(trustBlock, trustTarget);
   }
 
 })();
